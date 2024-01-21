@@ -17,3 +17,8 @@ My file for taking notes throughout the CS260 course
 - My domain: `rootrevolution.space`
 - DNS records link what is typed in the record name to the IP specified in the record
 - NS or nameservers store and organize DNS records
+
+## HTTPS, TLS, and certificates
+- Caddy has ACME support built into it by default
+- `port 443` is the port for https
+- the lock icon by the address bar indicates https
