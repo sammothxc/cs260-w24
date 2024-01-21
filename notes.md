@@ -10,3 +10,5 @@ My file for taking notes throughout the CS260 course
 ## AWS - EC2
 - SSH Command: `ssh -i ~/.ssh/keypair.pem ubuntu@52.205.244.9`
 - IP Address: `52.205.244.9`
+- EC2 class AMI ID: `ami-0b009f6c56cdd83ed`
+- Region: US East (N. Virginia) - `us-east-1`
