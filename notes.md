@@ -24,7 +24,15 @@ My file for taking notes throughout the CS260 course
 - the lock icon by the address bar indicates https
 
 ## HTML Structure
-
+- Links:
+```
+<a href="https://www.byu.edu/">BYU</a>
+```
+- Headers:
+```
+<h1>text here</h1>
+<!--you can use h followed by 1 thru 6-->
+```
 ## HTML Input
 | Element    | Meaning                          | Example                                        |
 | ---------- | -------------------------------- | ---------------------------------------------- |
