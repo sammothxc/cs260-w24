@@ -38,3 +38,38 @@ My file for taking notes throughout the CS260 course
 | `label`    | Individual input label           | `<label for="range">Range: </label>`           |
 | `output`   | Output of input                  | `<output for="range">0</output>`               |
 | `meter`    | Display value with a known range | `<meter min="0" max="100" value="50"></meter>` |
+
+## HTML Media
+- Canvas:
+```
+<canvas id="canvasDemo" width="300" height="200" style="border: 1px solid #000000"></canvas>
+<script>
+  const ctx = document.getElementById('canvasDemo').getContext('2d');
+  ctx.beginPath();
+  ctx.arc(150, 100, 50, 0, 2 * Math.PI);
+  ctx.fillStyle = 'red';
+  ctx.strokeStyle = 'red';
+  ctx.fill();
+  ctx.stroke();
+</script>
+```
+- Scalable Vector Graphics:
+```
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" stroke="red" fill="red" style="border: 1px solid #000000">
+  <circle cx="150" cy="100" r="50" />
+</svg>
+```
+- Video:
+```
+<video controls width="300" crossorigin="anonymous">
+  <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" />
+</video>
+```
+- Audio:
+```
+<audio controls src="testAudio.mp3"></audio>
+```
+- Image:
+```
+<img alt="mountain landscape" src="https://images.pexels.com/photos/164170/pexels-photo-164170.jpeg" />
+```
