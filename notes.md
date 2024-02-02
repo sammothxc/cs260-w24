@@ -81,3 +81,9 @@ My file for taking notes throughout the CS260 course
 ```
 <img alt="mountain landscape" src="https://images.pexels.com/photos/164170/pexels-photo-164170.jpeg" />
 ```
+
+## CSS Practice
+- Any declaration property defined at a lower level will override the higher declaration
+- CSS defines everything as boxes. When you apply styles, you are applying them to a region of the display that is a rectangular box
+- Any element can have zero or more classifications applied to it
+- Pseudo selectors select based on positional relationships, mouse interactions, hyperlink visitation states, and attributes
