@@ -14,7 +14,7 @@ My file for taking notes throughout the CS260 course
 - Region: US East (N. Virginia) - `us-east-1`
 
 ## Domain Name
-- My domain: `rootrevolution.space`
+- My domain: `rootrevolution.store`
 - DNS records link what is typed in the record name to the IP specified in the record
 - NS or nameservers store and organize DNS records
 
