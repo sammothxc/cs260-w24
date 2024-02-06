@@ -40,3 +40,4 @@ For this deliverable I built the structure of my application using HTML
 - Images: there are images on the homescreen of campaigns
 - Tables: there is a table on the page of campaigns
 - DB/Login - Input box and submit button for login. The user info and campaign info represent data pulled from the database.
+- WebSocket - The WebSocket is used to update the homescreen with new campaigns
