@@ -87,3 +87,11 @@ My file for taking notes throughout the CS260 course
 - CSS defines everything as boxes. When you apply styles, you are applying them to a region of the display that is a rectangular box
 - Any element can have zero or more classifications applied to it
 - Pseudo selectors select based on positional relationships, mouse interactions, hyperlink visitation states, and attributes
+
+## HTML startup
+- favicons can be pngs, all you need to do is link them in the head of the html file
+- the `title` tag is what is displayed in the browser tab
+- `<img>` tags can have a size attribute that is a percentage of the screen size
+- the `alt` attribute is used to describe the image if it cannot be displayed
+- elements really can be named anything, but it is best to stick to semantic names
+- you can escape characters in html using `&` followed by the character's name and a semicolon
