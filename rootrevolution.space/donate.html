@@ -28,29 +28,35 @@
     </header>
 
     <main>
-      <h2>Login</h2>
-      <p>Login to donate!</p>
-      <form method="get" action="donate.html">
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Your name here" />
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Your password here" />
-        <button type="submit">Login</button>
-      </form>
+      <user-based>
+        <h3>Your Community</h3>
+        <!-- Service calls to load campaigns near the user-->
+        <ul>
+          <li><a href="campaign.html">Neighborhood Veggie Garden</a></li>
+          <li><a href="campaign.html">Carrot garden for Provo Elderly Care Center</a></li>
+          <li><a href="campaign.html">Sarah's Planting Club</a></li>
+        </ul>
+        <h3>Saved</h3>
+        <!-- Service calls to load campaigns the user has saved-->
+        <ul>
+          <li><a href="campaign.html">Neighborhood Veggie Garden</a></li>
+          <li><a href="campaign.html">Carrot garden for Provo Elderly Care Center</a></li>
+          <li><a href="campaign.html">Sarah's Planting Club</a></li>
+        </ul>
+      </user-based>
       <hr />
       <seedfeed>
         <h1>SeedFeed</h1>
-        <p>Check out the latest seed campaigns!</p>
+        <p>Check out these campaigns that need the seeds that you have!</p>
+        <!-- Service calls to load campaigns that match the seed type that users have donated in the past-->
         <ul>
-          <li><a href="campaign.html">1000 Tomato seeds for local Elementary School</a></li>
-          <li><a href="campaign.html">50,000 Pepper seeds to feed Town after natural disaster</a></li>
-          <li><a href="campaign.html">Carrot garden for Elderly Care Center</a></li>
-          <li><a href="campaign.html">911 Rose seeds for 9/11 community memorial flowerbed</a></li>
+          <li><a href="campaign.html">[Tomato] 1000 Tomato seeds for local Elementary School</a></li>
+          <li><a href="campaign.html">[Pepper] 50,000 Pepper seeds to feed Town after natural disaster</a></li>
+          <li><a href="campaign.html">[Carrot] Carrot garden for Elderly Care Center</a></li>
+          <li><a href="campaign.html">[Rose] 911 Rose seeds for 9/11 community memorial flowerbed</a></li>
         </ul>
-      </seedfeed>
+      </seedfeed>  
     </main>
-
-
 
     <footer>
       <hr />
