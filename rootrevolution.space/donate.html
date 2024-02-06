@@ -1,68 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- Tell browsers not to scale the viewport automatically -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RootRevolution</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-  </head>
-  <body>
-    <!-- Use header, main, and footer elements to give semantic structure -->
-    <header>
-      <h1>RootRevolution<sup>&reg;</sup></h1>
 
-      <!-- Navigation elements -->
-      <nav>
-        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
-        <menu>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="donate.html">Donate</a></li>
-          <li><a href="account.html">Account</a></li>
-          <li><a href="about.html">About</a></li>
-        </menu>
-      </nav>
+<head>
+  <meta charset="UTF-8" />
+  <!-- Tell browsers not to scale the viewport automatically -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RootRevolution</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+</head>
 
-      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
-      <hr />
-    </header>
+<body>
+  <!-- Use header, main, and footer elements to give semantic structure -->
+  <header>
+    <h1>RootRevolution<sup>&reg;</sup></h1>
 
-    <main>
-      <user-based>
-        <h3>Your Community in &lt;location&gt;</h3>
-        <!-- Service calls to load campaigns near the user-->
-        <ul>
-          <li><a href="campaign.html">Neighborhood Veggie Garden</a></li>
-          <li><a href="campaign.html">Carrot garden for Provo Elderly Care Center</a></li>
-          <li><a href="campaign.html">Sarah's Planting Club</a></li>
-        </ul>
-        <h3>Saved</h3>
-        <!-- Service calls to load campaigns the user has saved-->
-        <ul>
-          <li><a href="campaign.html">&lt;saved campaign name&gt;</a></li>
-          <li><a href="campaign.html">&lt;saved campaign name&gt;</a></li>
-          <li><a href="campaign.html">&lt;saved campaign name&gt;</a></li>
-        </ul>
-      </user-based>
-      <hr />
-      <seedfeed>
-        <h1>SeedFeed</h1>
-        <p>Check out these campaigns that need the seeds that you have!</p>
-        <!-- Service calls to load campaigns that match the seed type that users have donated in the past-->
-        <ul>
-          <li><a href="campaign.html">[&lt;seed type&gt;] 1000 Tomato seeds for local Elementary School</a></li>
-          <li><a href="campaign.html">[&lt;seed type&gt;] 50,000 Pepper seeds to feed Town after natural disaster</a></li>
-          <li><a href="campaign.html">[&lt;seed type&gt;] Carrot garden for Elderly Care Center</a></li>
-          <li><a href="campaign.html">[&lt;seed type&gt;] 911 Rose seeds for 9/11 community memorial flowerbed</a></li>
-        </ul>
-      </seedfeed>  
-    </main>
+    <!-- Navigation elements -->
+    <nav>
+      <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
+      <menu>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="account.html">Account</a></li>
+        <li><a href="about.html">About</a></li>
+      </menu>
+    </nav>
 
-    <footer>
-      <hr />
-      <span class="text-reset">Sam Warr</span>
-      <br />
-      <a href="https://github.com/sammothxc/startup">GitHub</a>
-    </footer>
-  </body>
+    <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
+    <hr />
+  </header>
+
+  <main>
+    <user-based>
+      <h3>Your Community in &lt;location&gt;</h3>
+      <!-- Service calls to load campaigns near the user-->
+      <ul>
+        <li><a href="campaign.html">Neighborhood Veggie Garden</a></li>
+        <img src="placeholder-image.jpg" alt="Profile Picture" width="125" />
+        <li><a href="campaign.html">Carrot garden for Provo Elderly Care Center</a></li>
+        <img src="placeholder-image.jpg" alt="Profile Picture" width="125" />
+        <li><a href="campaign.html">Sarah's Planting Club</a></li>
+        <img src="placeholder-image.jpg" alt="Profile Picture" width="125" />
+      </ul>
+      <h3>Saved</h3>
+      <!-- Service calls to load campaigns the user has saved-->
+      <ul>
+        <li><a href="campaign.html">&lt;saved campaign name&gt;</a></li>
+        <img src="placeholder-image.jpg" alt="Profile Picture" width="125" />
+        <li><a href="campaign.html">&lt;saved campaign name&gt;</a></li>
+        <img src="placeholder-image.jpg" alt="Profile Picture" width="125" />
+        <li><a href="campaign.html">&lt;saved campaign name&gt;</a></li>
+        <img src="placeholder-image.jpg" alt="Profile Picture" width="125" />
+      </ul>
+    </user-based>
+    <hr />
+    <seedfeed>
+      <h1>SeedFeed</h1>
+      <p>Check out these campaigns that need the seeds that you have!</p>
+      <!-- Service calls to load campaigns that match the seed type that users have donated in the past-->
+      <ul>
+        <li><a href="campaign.html">[&lt;seed type&gt;] 1000 Tomato seeds for local Elementary School</a></li>
+        <img src="placeholder-image.jpg" alt="Profile Picture" width="125" />
+        <li><a href="campaign.html">[&lt;seed type&gt;] 50,000 Pepper seeds to feed Town after natural disaster</a></li>
+        <img src="placeholder-image.jpg" alt="Profile Picture" width="125" />
+        <li><a href="campaign.html">[&lt;seed type&gt;] Carrot garden for Elderly Care Center</a></li>
+        <img src="placeholder-image.jpg" alt="Profile Picture" width="125"/>
+        <li><a href="campaign.html">[&lt;seed type&gt;] 911 Rose seeds for 9/11 community memorial flowerbed</a></li>
+        <img src="placeholder-image.jpg" alt="Profile Picture" width="125"/>
+      </ul>
+    </seedfeed>
+  </main>
+
+  <footer>
+    <hr />
+    <span class="text-reset">Sam Warr</span>
+    <br />
+    <a href="https://github.com/sammothxc/startup">GitHub</a>
+  </footer>
+</body>
+
 </html>
