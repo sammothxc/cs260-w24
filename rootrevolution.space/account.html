@@ -1,58 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- Tell browsers not to scale the viewport automatically -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Account</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-  </head>
-  <body>
-    <!-- Use header, main, and footer elements to give semantic structure -->
-    <header>
-      <h1>RootRevolution<sup>&reg;</sup></h1>
 
-      <!-- Navigation elements -->
-      <nav>
-        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
-        <menu>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="donate.html">Donate</a></li>
-          <li><a href="account.html">Account</a></li>
-          <li><a href="about.html">About</a></li>
-        </menu>
-      </nav>
+<head>
+  <meta charset="UTF-8" />
+  <!-- Tell browsers not to scale the viewport automatically -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Account</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+</head>
 
-      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
-      <hr />
-    </header>
+<body>
+  <!-- Use header, main, and footer elements to give semantic structure -->
+  <header>
+    <h1>RootRevolution<sup>&reg;</sup></h1>
 
-    <main>
-      <!-- Service calls to load users personal info from database -->
-      <h1>Your Account</h1>
-      <h2>username</h2>
-      <p>Name: Full Name</p>
-      <p>Email: email</p>
-      <p>Phone: phone</p>
-      <p>Location: city, zip</p>
-      <p>Seeds Donated: 100</p>
-      <p>Seeds Received: 100</p>
-      <p>Campaigns Run:</p>
-      <ul>
-        <li><a href="campaign.html">Campaign 1</a></li>
-        <li><a href="campaign.html">Campaign 2</a></li>
-      <p>Saved Campaigns:</p>
-      <ul>
-        <li><a href="campaign.html">Campaign 1</a></li>
-        <li><a href="campaign.html">Campaign 2</a></li>
-      </ul>
-    </main>
+    <!-- Navigation elements -->
+    <nav>
+      <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
+      <menu>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="account.html">Account</a></li>
+        <li><a href="about.html">About</a></li>
+      </menu>
+    </nav>
 
-    <footer>
-      <hr />
-      <span class="text-reset">Sam Warr</span>
-      <br />
-      <a href="https://github.com/sammothxc/startup">GitHub</a>
-    </footer>
-  </body>
+    <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
+    <hr />
+  </header>
+
+  <main>
+    <!-- Service calls to load users personal info from database -->
+    <h1>Your Account</h1>
+    <h2>&lt;username&gt;</h2>
+    <p>Name: &lt;full name&gt;</p>
+    <p>Email: &lt;email&gt;</p>
+    <p>Phone: &lt;phone&gt;</p>
+    <p>Location: &lt;city, zip&gt;</p>
+    <p>Seeds Donated: &lt;number of seeds&gt;</p>
+    <p>Seeds Received: &lt;number of seeds&gt;</p>
+    <p>Campaigns Run:</p>
+    <ul>
+      <li><a href="campaign.html">&lt;name of campaign&gt;</a></li>
+      <li><a href="campaign.html">&lt;name of campaign&gt;</a></li>
+    </ul>
+    <p>Saved Campaigns:</p>
+    <ul>
+      <li><a href="campaign.html">&lt;name of campaign&gt;</a></li>
+      <li><a href="campaign.html">&lt;name of campaign&gt;</a></li>
+    </ul>
+  </main>
+
+  <footer>
+    <hr />
+    <span class="text-reset">Sam Warr</span>
+    <br />
+    <a href="https://github.com/sammothxc/startup">GitHub</a>
+  </footer>
+</body>
+
 </html>
