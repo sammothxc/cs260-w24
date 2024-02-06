@@ -32,3 +32,11 @@ Each campaign also gets its own page:
   - retrieving seed map
 - DB/Login - Store users, campaigns, and seed counts. Register and login users, and credentials securely stored in a database. Can request to donate without authentication, but email is required and seed count will not grow
 - WebSocket - As campaigns are created, they are shown on the homescreens or the "SeedFeeds" of other users
+## HTML Deliverable
+For this deliverable I built the structure of my application using HTML
+- HTML pages: one for login, one for a homescreen, one for each campaign, amd one for each user, and one for a seed map
+- Links: there is a working nav menu with links to each page and links from the homescreen to each campaign
+- Forms: there is a login form and a form to create a campaign
+- Images: there are images on the homescreen of campaigns
+- Tables: there is a table on the page of campaigns
+- DB/Login - Input box and submit button for login. The user info and campaign info represent data pulled from the database.
