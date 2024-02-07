@@ -95,3 +95,8 @@ My file for taking notes throughout the CS260 course
 - the `alt` attribute is used to describe the image if it cannot be displayed
 - elements really can be named anything, but it is best to stick to semantic names
 - you can escape characters in html using `&` followed by the character's name and a semicolon
+
+## CSS flex
+- `flex: 0 80px` - Zero means it will not grow and 80px means it has a starting basis height of 80 pixels, a fixed size box
+- `flex: 1` - One means it will get one fractional unit of growth
+- media queries drop the header and footer if the viewport gets too short, and orient the main sections as rows if it gets too narrow
