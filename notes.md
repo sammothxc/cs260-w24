@@ -100,3 +100,16 @@ My file for taking notes throughout the CS260 course
 - `flex: 0 80px` - Zero means it will not grow and 80px means it has a starting basis height of 80 pixels, a fixed size box
 - `flex: 1` - One means it will get one fractional unit of growth
 - media queries drop the header and footer if the viewport gets too short, and orient the main sections as rows if it gets too narrow
+
+## JavaSript Arrays
+- "example is the best teacher"
+  ```
+  function testAll(input, tester) {
+    const result = input.every(tester);
+    return result;
+  }
+  
+  const result = testAll(["apple", "banana", "orange"], item => item.length > 3);
+  
+  console.log(result);
+  ```
