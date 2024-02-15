@@ -53,6 +53,6 @@ For this deliverable I built the structure of my application using HTML
 - [x] - 30% Header, footer, and main content body. Used flex to layout sections.
 - [x] - 20% Navigation elements. Links highlight on hover.
 - [x] - 10% Responsive to window resizing. Looks great on iPad, desktop, and iPhone.
-- [x] - 20% Application elements. Buttons are using bootstrap
-- [x] - 10% Application text content. Text is displayed using the Merriday font
-- [x] - 10% Application images. I added curved edges around my profile photo.
+- [x] - 20% Application elements. Buttons have nice styling and the homescreen is tiled
+- [x] - 10% Application text content. Text is colored and themed after my deliverable
+- [x] - 10% Application images. I made sure images were resizable and wouldn't ever be too large.
