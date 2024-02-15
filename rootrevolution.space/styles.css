@@ -1,304 +1,310 @@
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* Body styles */
 body {
-font-family: Arial, sans-serif;
-line-height: 1.6;
-background-color: #f9f9f9;
-color: #333;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Header styles */
 header {
-background-color: #354A21;
-color: #fff;
-padding: 1rem;
-text-align: center;
+    background-color: #354A21;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
 }
 
 header h1 {
-margin: 0;
+    margin: 0;
 }
 
 /* Navigation styles */
 nav {
-margin-top: 1rem;
-margin-bottom: 0.5rem
+    margin-top: 1rem;
+    margin-bottom: 0.5rem
 }
 
 nav menu {
-list-style-type: none;
+    list-style-type: none;
 }
 
 nav menu li {
-display: inline;
-margin-right: 2rem;
+    display: inline;
+    margin-right: 2rem;
 }
 
 nav menu li a {
-color: #fff;
-text-decoration: none;
-font-weight: bold;
-transition: background-color 0.4s;
-transition: padding 0.4s
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.4s;
+    transition: padding 0.4s
 }
 
 nav menu li a:hover {
-color: #354A21;
-background-color: #fff;
-border-radius: 4px;
-padding: 0.5rem 0.5rem;
-font-weight: bold;
-transition: background-color 0.4s;
-transition: padding 0.4s
+    color: #354A21;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 0.5rem 0.5rem;
+    font-weight: bold;
+    transition: background-color 0.4s;
+    transition: padding 0.4s
 }
 
 /* Main styles */
 main {
-padding: 2rem;
+    padding: 2rem;
+    flex-grow: 1;
 }
 
 main h1 {
-font-size: 2rem;
-margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 main p {
-font-size: 1.1rem;
-margin-bottom: 2rem;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
 }
 
 main form {
-max-width: 400px; /* Limit form width for better readability */
+    max-width: 400px;
 }
 
 main label {
-display: block; /* Make labels display as block elements */
-margin-bottom: 0.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
-main input[type="text"],
-main input[type="password"] {
-width: 100%;
-padding: 0.5rem;
-margin-bottom: 1rem;
-border: 1px solid #ccc;
-border-radius: 4px;
+main input[type="text"], main input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 main button {
-padding: 0.5rem 1rem;
-background-color: #333;
-color: #fff;
-border: none;
-border-radius: 4px;
-cursor: pointer;
+    padding: 0.5rem 1rem;
+    background-color: #083000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 main button:hover {
-background-color: #555;
+    background-color: #00b600;
 }
 
 main hr {
-margin-top: 2rem;
+    margin-top: 2rem;
 }
 
 /* Campaign tiles styles */
 main ul {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(225px, 1fr)); /* Adjust the minimum and maximum width of each tile */
-grid-gap: 1rem; /* Adjust the gap between tiles */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    grid-gap: 1rem;
 }
 
 main ul li {
-border: 3px solid #005512; /* Add border around each tile */
-border-radius: 8px; /* Add border radius for rounded corners */
-padding: 1.5rem; /* Add padding to each tile */
-background-color: #f9f9f9; /* Add background color to each tile */
+    border: 3px solid #005512;
+    border-radius: 8px;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
 }
 
 main ul li img {
-width: 100%; /* Ensure image fills the tile */
-border-radius: 8px; /* Add border radius for rounded image corners */
+    width: 100%;
+    border-radius: 8px;
 }
 
 /* Campaign section styles */
 campaign {
-margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 campaign h1 {
-font-size: 2rem;
-margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 campaign h5 {
-font-size: 1.2rem;
-color: #666;
-margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1rem;
 }
 
 campaign img {
-margin-bottom: 1rem;
-max-width: 100%;
+    margin-bottom: 1rem;
+    max-width: 100%;
 }
 
 campaign h3 {
-font-size: 1.5rem;
-margin-bottom: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 campaign p {
-margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 campaign table {
-width: 100%;
-border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
 }
 
-campaign table th,
-campaign table td {
-padding: 0.5rem;
-border: 1px solid #ccc;
+campaign table th, campaign table td {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
 }
 
 /* User-based section styles */
 user-based {
-margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 user-based h3 {
-margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 user-based ul {
-list-style-type: none;
+    list-style-type: none;
 }
 
 user-based ul li {
-margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
+
+user-based a, seedfeed a {
+    color: #005512;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 
 /* SeedFeed section styles */
 seedfeed {
-margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 seedfeed h1 {
-margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 seedfeed p {
-margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 seedfeed ul {
-list-style-type: none;
+    list-style-type: none;
 }
 
 seedfeed ul li {
-margin-bottom: 1rem;
-color: #005512
-text-decoration: none;
+    margin-bottom: 1rem;
 }
 
 /* Account info styles */
 account-info {
-padding: 2rem;
+    padding: 2rem;
 }
 
 account-info h1 {
-font-size: 2rem;
-margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 account-info h2 {
-font-size: 1.5rem;
-margin-bottom: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 account-info p {
-margin-bottom: 0.1rem;
+    margin-bottom: 0.1rem;
 }
 
 account-info img {
-margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 account-info ul {
-list-style-type: none;
-padding: 0;
+    list-style-type: none;
+    padding: 0;
 }
 
 account-info ul li {
-margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 account-info ul li a {
-color: #333;
-text-decoration: none;
+    color: #333;
+    text-decoration: none;
 }
 
 account-info ul li a:hover {
-text-decoration: underline;
+    text-decoration: underline;
 }
 
 account-info a {
-display: inline-block;
-margin-top: 1rem;
-padding: 0.5rem 1rem;
-background-color: #333;
-color: #fff;
-text-decoration: none;
-border-radius: 4px;
+    display: inline-block;
+    margin-top: 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 account-info a:hover {
-background-color: #555;
+    text-decoration: none;
 }
 
 /* About section styles */
 about {
-padding: 2rem;
+    padding: 2rem;
 }
 
 about h1 {
-font-size: 2rem;
-margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 about p {
-margin-bottom: 1rem;
-padding: 1.5rem;
-border: 3px solid #023502; /* Add border */
-border-radius: 12px; /* Add border radius for rounded corners */
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    border: 3px solid #023502;
+    border-radius: 12px;
 }
 
 about img {
-margin-bottom: 1rem;
-max-width: 100%; /* Ensure image does not exceed container width */
+    margin-bottom: 1rem;
+    max-width: 100%;
 }  
 
 /* Footer styles */
 footer {
-background-color: #233115;
-color: #fff;
-padding: 1rem;
-text-align: center;
+    background-color: #233115;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    margin-top: auto;
 }
 
 footer a {
-color: #fff;
-text-decoration: underline;
+    color: #fff;
+    text-decoration: underline;
 }
 
 footer a:hover {
-color: #354A21;
-background-color: #fff;
-text-decoration: none;
+    color: #354A21;
+    background-color: #fff;
+    text-decoration: none;
 }
