@@ -200,6 +200,27 @@
     background-color: #555;
   }
   
+  /* About section styles */
+about {
+    padding: 2rem;
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 8px; /* Add border radius for rounded corners */
+  }
+  
+  about h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  about p {
+    margin-bottom: 0.5rem;
+  }
+  
+  about img {
+    margin-bottom: 1rem;
+    max-width: 100%; /* Ensure image does not exceed container width */
+  }  
+
   /* Footer styles */
   footer {
     background-color: #233115;
