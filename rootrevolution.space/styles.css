@@ -203,8 +203,6 @@
   /* About section styles */
 about {
     padding: 2rem;
-    border: 1px solid #ccc; /* Add border */
-    border-radius: 8px; /* Add border radius for rounded corners */
   }
   
   about h1 {
@@ -214,6 +212,8 @@ about {
   
   about p {
     margin-bottom: 0.5rem;
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 8px; /* Add border radius for rounded corners */
   }
   
   about img {
