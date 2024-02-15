@@ -115,7 +115,7 @@ grid-gap: 1rem; /* Adjust the gap between tiles */
 }
 
 main ul li {
-border: 1px solid #ccc; /* Add border around each tile */
+border: 3px solid #005512; /* Add border around each tile */
 border-radius: 8px; /* Add border radius for rounded corners */
 padding: 1rem; /* Add padding to each tile */
 background-color: #f9f9f9; /* Add background color to each tile */
