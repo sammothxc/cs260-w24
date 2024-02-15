@@ -50,8 +50,8 @@ For this deliverable I built the structure of my application using HTML
 - [x] - Prerequisite: Simon CSS deployed to your production environment
 - [x] - Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
 - [x] - Prerequisite: Notes in your startup Git repository README.md file
-- [x] - 30% Header, footer, and main content body. Used flex to layout sections.
-- [x] - 20% Navigation elements. Links highlight on hover.
+- [x] - 30% Header, footer, and main content body. Used grid to layout homescreen sections.
+- [x] - 20% Navigation elements. Nice nav menu effects and transitions.
 - [x] - 10% Responsive to window resizing. Looks great on iPad, desktop, and iPhone.
 - [x] - 20% Application elements. Buttons have nice styling and the homescreen is tiled
 - [x] - 10% Application text content. Text is colored and themed after my deliverable
