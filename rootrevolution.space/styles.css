@@ -110,7 +110,7 @@ margin-top: 2rem;
 /* Campaign tiles styles */
 main ul {
 display: grid;
-grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust the minimum and maximum width of each tile */
+grid-template-columns: repeat(auto-fill, minmax(225px, 1fr)); /* Adjust the minimum and maximum width of each tile */
 grid-gap: 1rem; /* Adjust the gap between tiles */
 }
 
