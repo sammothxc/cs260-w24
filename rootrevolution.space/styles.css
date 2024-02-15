@@ -14,7 +14,7 @@
   
   /* Header styles */
   header {
-    background-color: #233115;
+    background-color: #354A21;
     color: #fff;
     padding: 1rem;
     text-align: center;
@@ -44,7 +44,7 @@
   }
   
   nav menu li a:hover {
-    color: #233115;
+    color: #354A21;
     background-color: #fff;
     border-radius: 4px;
     padding: 0.5rem 1rem;
@@ -95,7 +95,7 @@
   
   /* Footer styles */
   footer {
-    background-color: #0a2704;
+    background-color: #233115;
     color: #fff;
     padding: 1rem;
     text-align: center;
