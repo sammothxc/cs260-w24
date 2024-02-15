@@ -1,165 +1,75 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SeedFeed - RootRevolution</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-/* Body styles */
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f9f9f9;
-  color: #333;
-}
+  <body>
+    <header>
+      <h1>RootRevolution<sup>&reg;</sup></h1>
+      <nav>
+        <menu>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="seed-map.html">Seed Map</a></li>
+          <!-- Later on login/account will be one menu item-->
+          <li><a href="login.html">Login</a></li>
+          <li><a href="account.html">Account</a></li>
+          <li><a href="about.html">About</a></li>
+        </menu>
+      </nav>
+      <hr />
+    </header>
 
-/* Header styles */
-header {
-  background-color: #354A21;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-}
+    <main>
+      <user-based>
+        <h3>Your Community in &lt;location&gt;</h3>
+        <!-- Service calls to load campaigns near the user-->
+        <ul>
+          <li><a href="campaign.html">Neighborhood Veggie Garden</a></li>
+          <img src="placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
+          <li><a href="campaign.html">Carrot garden for Provo Elderly Care Center</a></li>
+          <img src="placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
+          <li><a href="campaign.html">Sarah's Planting Club</a></li>
+          <img src="placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
+        </ul>
+        <h3>Saved</h3>
+        <!-- Service calls to load campaigns the user has saved-->
+        <ul>
+          <li><a href="campaign.html">&lt;saved campaign name&gt;</a></li>
+          <img src="placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
+          <li><a href="campaign.html">&lt;saved campaign name&gt;</a></li>
+          <img src="placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
+          <li><a href="campaign.html">&lt;saved campaign name&gt;</a></li>
+          <img src="placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
+        </ul>
+      </user-based>
+      <hr />
+      <seedfeed>
+        <h1>SeedFeed</h1>
+        <p>Check out these campaigns that need the seeds that you have!</p>
+        <!-- Service calls to load campaigns that match the seed type that users have donated in the past-->
+        <ul>
+          <li><a href="campaign.html">[&lt;seed type&gt;] 1000 Tomato seeds for local Elementary School</a></li>
+          <img src="placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
+          <li><a href="campaign.html">[&lt;seed type&gt;] 50,000 Pepper seeds to feed Town after natural disaster</a></li>
+          <img src="placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
+          <li><a href="campaign.html">[&lt;seed type&gt;] Carrot garden for Elderly Care Center</a></li>
+          <img src="placeholder-campaign.jpg" alt="Campaign Picture" width="125"/>
+          <li><a href="campaign.html">[&lt;seed type&gt;] 911 Rose seeds for 9/11 community memorial flowerbed</a></li>
+          <img src="placeholder-campaign.jpg" alt="Campaign Picture" width="125"/>
+        </ul>
+      </seedfeed>
+    </main>
 
-header h1 {
-  margin: 0;
-}
-
-/* Navigation styles */
-nav {
-  margin-top: 1rem;
-  margin-bottom: 0.5rem
-}
-
-nav menu {
-  list-style-type: none;
-}
-
-nav menu li {
-  display: inline;
-  margin-right: 2rem;
-}
-
-nav menu li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.4s;
-  transition: padding 0.4s
-}
-
-nav menu li a:hover {
-  color: #354A21;
-  background-color: #fff;
-  border-radius: 4px;
-  padding: 0.5rem 0.5rem;
-  font-weight: bold;
-  transition: background-color 0.4s;
-  transition: padding 0.4s
-}
-
-/* Main styles */
-main {
-  padding: 2rem;
-}
-
-main h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-main p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-}
-
-main form {
-  max-width: 400px; /* Limit form width for better readability */
-}
-
-main label {
-  display: block; /* Make labels display as block elements */
-  margin-bottom: 0.5rem;
-}
-
-main input[type="text"],
-main input[type="password"] {
-  width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-main button {
-  padding: 0.5rem 1rem;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-main button:hover {
-  background-color: #555;
-}
-
-main hr {
-  margin-top: 2rem;
-}
-
-/* User-based section styles */
-user-based {
-  margin-bottom: 2rem;
-}
-
-user-based h3 {
-  margin-bottom: 1rem;
-}
-
-user-based ul {
-  list-style-type: none;
-}
-
-user-based ul li {
-  margin-bottom: 1rem;
-}
-
-/* SeedFeed section styles */
-seedfeed {
-  margin-bottom: 2rem;
-}
-
-seedfeed h1 {
-  margin-bottom: 1rem;
-}
-
-seedfeed p {
-  margin-bottom: 1rem;
-}
-
-seedfeed ul {
-  list-style-type: none;
-}
-
-seedfeed ul li {
-  margin-bottom: 1rem;
-}
-
-/* Footer styles */
-footer {
-  background-color: #233115;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-}
-
-footer a {
-  color: #fff;
-  text-decoration: underline;
-}
-
-footer a:hover {
-  color: #354A21;
-  background-color: #fff;
-  text-decoration: none;
-}
+    <footer>
+      <hr />
+      <span class="text-reset">by Sam Warr &copy;2024</span>
+      <br />
+      <soo>Source: <soo/><a href="https://github.com/sammothxc/startup">GitHub</a>
+    </footer>
+  </body>
+</html>
