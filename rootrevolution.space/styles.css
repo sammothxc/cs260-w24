@@ -9,7 +9,7 @@
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f9f9f9;
-    color: #354A21;
+    color: #333;
   }
   
   /* Header styles */
@@ -27,6 +27,7 @@
   /* Navigation styles */
   nav {
     margin-top: 1rem;
+    margin-bottom: 0.5rem
   }
   
   nav menu {
@@ -35,19 +36,25 @@
   
   nav menu li {
     display: inline;
-    margin-right: 1rem;
+    margin-right: 2rem;
   }
   
   nav menu li a {
     color: #fff;
     text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.4s;
+    transition: padding 0.4s
   }
   
   nav menu li a:hover {
     color: #354A21;
     background-color: #fff;
     border-radius: 4px;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
+    font-weight: bold;
+    transition: background-color 0.4s;
+    transition: padding 0.4s
   }
   
   /* Main styles */
