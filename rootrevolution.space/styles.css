@@ -126,6 +126,46 @@ width: 100%; /* Ensure image fills the tile */
 border-radius: 4px; /* Add border radius for rounded image corners */
 }
 
+/* Campaign section styles */
+campaign {
+margin-bottom: 2rem;
+}
+
+campaign h1 {
+font-size: 2rem;
+margin-bottom: 1rem;
+}
+
+campaign h5 {
+font-size: 1.2rem;
+color: #666;
+margin-bottom: 1rem;
+}
+
+campaign img {
+margin-bottom: 1rem;
+max-width: 100%;
+}
+
+campaign h3 {
+font-size: 1.5rem;
+margin-bottom: 1rem;
+}
+
+campaign p {
+margin-bottom: 0.5rem;
+}
+
+campaign table {
+width: 100%;
+border-collapse: collapse;
+}
+
+campaign table th,
+campaign table td {
+padding: 0.5rem;
+border: 1px solid #ccc;
+}
 
 /* User-based section styles */
 user-based {
