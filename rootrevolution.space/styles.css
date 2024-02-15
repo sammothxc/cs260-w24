@@ -203,6 +203,8 @@ list-style-type: none;
 
 seedfeed ul li {
 margin-bottom: 1rem;
+color: #005512
+text-decoration: none;
 }
 
 /* Account info styles */
