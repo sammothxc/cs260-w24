@@ -211,8 +211,8 @@ about {
   }
   
   about p {
-    margin-bottom: 0.5rem;
-    border: 1px solid #023502; /* Add border */
+    margin-bottom: 1rem;
+    border: 3px solid #023502; /* Add border */
     border-radius: 12px; /* Add border radius for rounded corners */
   }
   
