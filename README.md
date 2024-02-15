@@ -37,13 +37,13 @@ Each campaign also gets its own page:
   
 ## HTML Deliverable
 For this deliverable I built the structure of my application using HTML
-- HTML pages: one for login, one for a homescreen, one for each campaign, amd one for each user, and one for a seed map
-- Links: there is a working nav menu with links to each page and links from the homescreen to each campaign
-- Forms: there is a login form and a form to create a campaign
-- Images: there are images on the homescreen of campaigns
-- Tables: there is a table on the page of campaigns
-- DB/Login - Input box and submit button for login. The user info and campaign info represent data pulled from the database.
-- WebSocket - The WebSocket is used to update the homescreen with new campaigns
+- [x] - HTML pages: one for login, one for a homescreen, one for each campaign, amd one for each user, and one for a seed map
+- [x] - Links: there is a working nav menu with links to each page and links from the homescreen to each campaign
+- [x] - Forms: there is a login form and a form to create a campaign
+- [x] - Images: there are images on the homescreen of campaigns
+- [x] - Tables: there is a table on the page of campaigns
+- [x] - DB/Login - Input box and submit button for login. The user info and campaign info represent data pulled from the database.
+- [x] - WebSocket - The WebSocket is used to update the homescreen with new campaigns
 
 ## CSS Deliverable
 
