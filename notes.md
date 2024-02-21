@@ -113,3 +113,8 @@ My file for taking notes throughout the CS260 course
   
   console.log(result);
   ```
+## JavaScript Promises
+- used for running things "in parallel"
+
+## JavaScript Async/Await
+- a shorter/simpler way of using promises
