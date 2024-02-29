@@ -61,7 +61,7 @@ For this deliverable I built the structure of my application using HTML
 - [x] - Prerequisite: Simon JavaScript deployed to your production environment
 - [x] - Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
 - [x] - Prerequisite: Notes in your startup Git repository README.md file
-- [x] - 20% JS Login: The user and password are set in local storage and the user is redirected to the homescreen
+- [x] - 20% JS Login: The user and password are set in local storage and the user is redirected to the homescreen, requires you to input both a username and password and gives an error banner if not
 - [X] - 20% JS Database Data: Recalls personal user data and displays it on the account page, and campaign info on campaign page *For now, it is only implemented in local storage*
 - [X] - 20% JS WebSocket: I used the setInterval function to periodically increase the "sitewide donation seed count" by a random amount. This will be replaced with WebSocket service calls later.
 - [X] - 40% JS Application Interaction Logic: Login nav menu item and Account nav item were merged. If you aren't logged, in the nav menu displays Login and if you are logged in, it displays your username and a Logout button. Added disappearing informational banners at the top of the page
