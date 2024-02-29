@@ -32,6 +32,24 @@ document.addEventListener("DOMContentLoaded", function() {
         loginLink.textContent = "Login";
         loginStatusElement.appendChild(loginLink);
     }
+    const registrationMessageDisplayed = localStorage.getItem("registrationMessageDisplayed");
+    const registered = localStorage.getItem("registered");
+    if (!registrationMessageDisplayed && registered) {
+        // Show welcome message
+        const registrationMessage = document.createElement("p");
+        registrationMessage.textContent = "Account created successfully!";
+        registrationMessage.classList.add("banner-message");
+        registrationMessage.classList.add("poppins-semibold");
+        document.body.insertBefore(registrationMessage, document.body.firstChild);
+        
+        // Set flag in local storage to indicate message has been displayed
+        localStorage.setItem("registrationMessageDisplayed", "true");
+        
+        // Remove the welcome message after animation completes
+        setTimeout(() => {
+            registrationMessage.remove();
+        }, 4000); // 4000 milliseconds = 4 seconds
+    }
     // Function to update the sitewide seed donation counter
     function updateSeedCounter() {
         const seedCounterElement = document.getElementById("seedCounter");
@@ -58,7 +76,7 @@ function login() {
     const usernameEl = document.querySelector("#username");
     const passwordEl = document.querySelector("#password");
     if (usernameEl.value.trim() === "" || passwordEl.value.trim() === "") {
-        alert("Please fill out both username and password fields.");
+        errorMsg();
         return;
     }
     localStorage.setItem("username", usernameEl.value);
@@ -69,4 +87,17 @@ function login() {
 function register() {
     // Redirect to register.html
     window.location.href = "register.html";
+}
+
+function errorMsg() {
+    const errorMessage = document.createElement("p");
+    errorMessage.textContent = "Please enter a username and password.";
+    errorMessage.classList.add("banner-message");
+    errorMessage.classList.add("error-message");
+    errorMessage.classList.add("slide-in");
+    errorMessage.classList.add("poppins-semibold");
+    document.body.insertBefore(errorMessage, document.body.firstChild);
+    setTimeout(() => {
+        errorMessage.remove();
+    }, 4000);
 }

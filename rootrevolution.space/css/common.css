@@ -9,6 +9,14 @@
 /* Banner message style */
 .banner-message {
     text-align: center;
+    font-weight: bold;
+    background-color: chartreuse;
+    color: #354A21;
+}
+
+.error-message {
+    background-color: red;
+    color: white;
 }
 
 /* Body styles */

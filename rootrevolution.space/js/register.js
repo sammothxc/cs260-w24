@@ -62,7 +62,7 @@ function register() {
     const passwordEl = document.querySelector("#password");
 
     if (usernameEl.value.trim() === "" || passwordEl.value.trim() === "" || fullnameEl.value.trim() === "" || emailEl.value.trim() === "" || locationEl.value.trim() === "" || usernameEl.value.trim() === "" || passwordEl.value.trim() === "") {
-        alert("Please fill out all fields, or put N/A if not applicable.");
+        errorMsg();
         return;
     }
     const currentDate = new Date();
@@ -81,5 +81,18 @@ function register() {
     localStorage.setItem("password", passwordEl.value);
     localStorage.setItem("seedsdonated", seedsdonated);
     localStorage.setItem("seedsreceived", seedsreceived);
+    localStorage.setItem("registered", true);
     window.location.href = "login.html";
+}
+
+function errorMsg() {
+    const errorMessage = document.createElement("p");
+    errorMessage.textContent = "Please fill out all fields or put N/A.";
+    errorMessage.classList.add("banner-message");
+    errorMessage.classList.add("error-message");
+    errorMessage.classList.add("poppins-semibold");
+    document.body.insertBefore(errorMessage, document.body.firstChild);
+    setTimeout(() => {
+        errorMessage.remove();
+    }, 4000);
 }
