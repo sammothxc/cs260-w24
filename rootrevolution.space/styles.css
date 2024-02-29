@@ -289,6 +289,14 @@ about img {
     max-width: 100%;
 }  
 
+/* Login styles */
+input[type="text"],
+input[type="password"] {
+  width: 200px; /* Adjust width as needed */
+  margin-right: 10px; /* Optional: Add margin between fields */
+}
+
+
 /* Footer styles */
 footer {
     background-color: #233115;
