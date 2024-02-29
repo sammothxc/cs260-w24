@@ -63,5 +63,5 @@ For this deliverable I built the structure of my application using HTML
 - [x] - Prerequisite: Notes in your startup Git repository README.md file
 - [x] - 20% JS Login: The user and password are set in local storage and the user is redirected to the homescreen
 - [ ] - 20% JS Database Data: 
-- [ ] - 20% JS WebSocket: 
+- [ ] - 20% JS WebSocket: I used the setInterval function to periodically increase the "sitewide donation seed count" by a random amount. This will be replaced with WebSocket service calls later.
 - [ ] - 40% JS Application Interaction Logic: 
