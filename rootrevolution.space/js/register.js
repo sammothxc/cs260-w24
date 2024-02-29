@@ -39,6 +39,11 @@ document.addEventListener("DOMContentLoaded", function() {
         const incrementAmount = Math.floor(Math.random() * 10) + 1; // Random number between 1 and 10
         // Get the current value of the counter and parse it as an integer
         let currentCount = parseInt(localStorage.getItem("seedCounter"));
+        if (!currentCount) {
+            // If the counter is not set, set it to 0
+            currentCount = 0;
+            localStorage.setItem("seedCounter", currentCount);
+        }
         // Increment the counter by the random amount
         currentCount += incrementAmount;
         // Update the counter display
