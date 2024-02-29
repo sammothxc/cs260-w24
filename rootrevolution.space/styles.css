@@ -306,6 +306,11 @@ footer {
     margin-top: auto;
 }
 
+/* Welcome message style */
+.welcome-message {
+    text-align: center;
+}
+
 footer a {
     color: #fff;
     text-decoration: underline;
