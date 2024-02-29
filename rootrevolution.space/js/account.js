@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const seedsDonatedtxt = document.createElement("p");
         const seedsReceivedtxt = document.createElement("p");
 
-        usernametxt.textContent = "Username: " + username;
+        usernametxt.textContent = username;
         memberSincetxt.textContent = "Member Since: " + membersince;
         nametxt.textContent = "Name: " + fullname;
         emailtxt.textContent = "Email: " + email;

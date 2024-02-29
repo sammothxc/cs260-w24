@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header styles */
+header {
+    background-color: #354A21;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Navigation styles */
+nav {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem
+}
+
+nav menu {
+    list-style-type: none;
+}
+
+nav menu li {
+    display: inline;
+    margin-right: 2rem;
+}
+
+nav menu li a, nav menu li button {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.4s;
+    transition: padding 0.4s
+}
+
+nav menu li a:hover {
+    color: #354A21;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 0.5rem 0.5rem;
+    font-weight: bold;
+    transition: background-color 0.4s;
+    transition: padding 0.4s
+}
+
+/* Main styles */
+main {
+    padding: 2rem;
+    flex-grow: 1;
+}
+
+main h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+main p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+main form {
+    max-width: 400px;
+}
+
+main label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+main input[type="text"], main input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+main button {
+    padding: 0.5rem 1rem;
+    background-color: #083000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+main button:hover {
+    background-color: #00b600;
+}
+
+main hr {
+    margin-top: 2rem;
+}
+
+/* Campaign tiles styles */
+main ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    grid-gap: 1rem;
+}
+
+main ul li {
+    border: 3px solid #005512;
+    border-radius: 8px;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+}
+
+main ul li img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Campaign section styles */
+campaign {
+    margin-bottom: 2rem;
+}
+
+campaign h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+campaign h5 {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+campaign img {
+    margin-bottom: 1rem;
+    max-width: 100%;
+}
+
+campaign h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+campaign p {
+    margin-bottom: 0.5rem;
+}
+
+campaign table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+campaign table th, campaign table td {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+}
+
+/* User-based section styles */
+user-based {
+    margin-bottom: 2rem;
+}
+
+user-based h3 {
+    margin-bottom: 1rem;
+}
+
+user-based ul {
+    list-style-type: none;
+}
+
+user-based ul li {
+    margin-bottom: 1rem;
+}
+
+user-based a, seedfeed a {
+    color: #005512;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* SeedFeed section styles */
+seedfeed {
+    margin-bottom: 2rem;
+}
+
+seedfeed h1 {
+    margin-bottom: 1rem;
+}
+
+seedfeed p {
+    margin-bottom: 1rem;
+}
+
+seedfeed ul {
+    list-style-type: none;
+}
+
+seedfeed ul li {
+    margin-bottom: 1rem;
+}
+
+/* Account info styles */
+account-info {
+    padding: 2rem;
+}
+
+account-info h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+account-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+account-info p {
+    margin-bottom: 0.1rem;
+}
+
+account-info img {
+    margin-bottom: 1rem;
+}
+
+account-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+account-info ul li {
+    margin-bottom: 1rem;
+}
+
+account-info ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+account-info ul li a:hover {
+    text-decoration: underline;
+}
+
+account-info a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+account-info a:hover {
+    text-decoration: none;
+}
+
+/* About section styles */
+about {
+    padding: 2rem;
+}
+
+about h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+about p {
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    border: 3px solid #023502;
+    border-radius: 12px;
+}
+
+about img {
+    margin-bottom: 1rem;
+    max-width: 100%;
+}  
+
+/* Login styles */
+input[type="text"],
+input[type="password"] {
+    width: 200px; /* Adjust width as needed */
+    margin-right: 10px; /* Optional: Add margin between fields */
+}
+
+
+/* Footer styles */
+footer {
+    background-color: #233115;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* Welcome message style */
+.welcome-message {
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #354A21;
+    background-color: #fff;
+    text-decoration: none;
+}

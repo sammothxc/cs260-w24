@@ -1,0 +1,22 @@
+main {
+    padding: 3rem;
+    flex-grow: 1;
+}
+
+main h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+main p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border: 3px solid #023502;
+    border-radius: 12px;
+}
+
+main img {
+    margin-bottom: 1rem;
+    max-width: 100%;
+}  
