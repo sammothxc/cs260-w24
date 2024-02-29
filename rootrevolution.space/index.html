@@ -6,6 +6,7 @@
     <title>SeedFeed - RootRevolution</title>
     <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="index.js"></script>
   </head>
 
   <body>
@@ -15,10 +16,8 @@
         <menu>
           <li><a href="index.html">Home</a></li>
           <li><a href="seed-map.html">Seed Map</a></li>
-          <!-- Later on login/account will be one menu item-->
-          <li><a href="login.html">Login</a></li>
-          <li><a href="account.html">Account</a></li>
           <li><a href="about.html">About</a></li>
+          <li id="loginStatus"></li>
         </menu>
       </nav>
       <hr />
@@ -74,6 +73,15 @@
     <script>
       // Fetch username from local storage
       const username = localStorage.getItem("userName");
+      const loginStatusElement = document.getElementById("loginStatus");
+      if (username) {
+        loginStatusElement.textContent = username;
+      } else {
+        const loginLink = document.createElement("a");
+        loginLink.href = "login.html";
+        loginLink.textContent = "Login";
+        loginStatusElement.appendChild(loginLink);
+        }
       if (username) {
         // Create a new element to display the welcome message
         const welcomeMessage = document.createElement("p");
