@@ -118,6 +118,8 @@ footer {
 
 .footer-right {
     align-items: right;
+    font-size: 2rem;
+    font-style: poppins-semibold;
 }
 
 footer a {

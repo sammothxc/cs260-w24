@@ -57,14 +57,15 @@ document.addEventListener("DOMContentLoaded", function() {
         // Generate a random amount to increment the counter
         const incrementAmount = Math.floor(Math.random() * 10) + 1; // Random number between 1 and 10
         // Get the current value of the counter and parse it as an integer
-        let currentCount = parseInt(seedCounterElement.textContent);
+        let currentCount = parseInt(localStorage.getItem("seedCounter"));
         // Increment the counter by the random amount
         currentCount += incrementAmount;
         // Update the counter display
-        seedCounterElement.textContent = currentCount;
+        localStorage.setItem("seedCounter", currentCount);
+        seedCounterElement.textContent = currentCount + " Seeds Donated Since 2024!";
     }
   
     // Call the updateSeedCounter function every few seconds (e.g., every 5 seconds)
-    setInterval(updateSeedCounter, 5000); // Update every 5 seconds
+    setInterval(updateSeedCounter, 2000); // Update every 5 seconds
   
 });
