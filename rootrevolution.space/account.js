@@ -33,15 +33,3 @@ document.addEventListener("DOMContentLoaded", function() {
         loginStatusElement.appendChild(loginLink);
     }
 });
-
-function login() {
-    const nameEl = document.querySelector("#username");
-    const passEl = document.querySelector("#password");
-    if (nameEl.value.trim() === "" || passEl.value.trim() === "") {
-        alert("Please fill out both username and password fields.");
-        return;
-    }
-    localStorage.setItem("username", nameEl.value);
-    localStorage.setItem("password", passEl.value);
-    window.location.href = "index.html";
-}
