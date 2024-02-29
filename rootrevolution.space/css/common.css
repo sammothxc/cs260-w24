@@ -139,9 +139,10 @@ footer a {
 @media only screen and (max-width: 768px) {
     /* Footer styles for mobile devices */
     footer {
-        padding: 0.6rem;
+        padding: 0.25rem;
     }
     .content {
+        padding: 0.25rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
