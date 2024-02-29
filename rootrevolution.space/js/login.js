@@ -65,3 +65,8 @@ function login() {
     localStorage.setItem("password", passwordEl.value);
     window.location.href = "index.html";
 }
+
+function register() {
+    // Redirect to register.html
+    window.location.href = "register.html";
+}
