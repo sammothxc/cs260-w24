@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Fetch username from local storage
-    const username = localStorage.getItem("username");
+    let username = localStorage.getItem("username");
     const loginStatusElement = document.getElementById("loginStatus");
-    const show_msg = localStorage.getItem("show_msg");
     
     if (username) {
         // User is logged in, display username and logout button
@@ -11,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
         logoutButton.onclick = function() {
             // Remove username from local storage
             localStorage.removeItem("username");
+            // Remove the welcome message flag from local storage
+            localStorage.removeItem("welcomeMessageDisplayed");
             // Reload the page to reflect changes
             location.reload();
         };
@@ -24,14 +25,21 @@ document.addEventListener("DOMContentLoaded", function() {
         loginStatusElement.appendChild(loginLink);
     }
     
-    // Remove the welcome message after animation completes
-    if (show_msg === "true") {
+    // Check if welcome message has been displayed for the current session
+    const welcomeMessageDisplayed = localStorage.getItem("welcomeMessageDisplayed");
+    if (!welcomeMessageDisplayed && username) {
+        // Show welcome message
+        const welcomeMessage = document.createElement("p");
+        welcomeMessage.textContent = "Welcome, " + username + "!";
+        welcomeMessage.classList.add("welcome-message");
+        document.body.insertBefore(welcomeMessage, document.body.firstChild);
+        
+        // Set flag in local storage to indicate welcome message has been displayed
+        localStorage.setItem("welcomeMessageDisplayed", "true");
+        
+        // Remove the welcome message after animation completes
         setTimeout(() => {
-            const welcomeMessage = document.querySelector(".welcome-message");
-            if (welcomeMessage) {
-                welcomeMessage.remove();
-            }   
+            welcomeMessage.remove();
         }, 4000); // 4000 milliseconds = 4 seconds
-        localStorage.setItem("show_msg", false);
     }
 });

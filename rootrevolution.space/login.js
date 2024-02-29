@@ -7,6 +7,5 @@ function login() {
     }
     localStorage.setItem("username", nameEl.value);
     localStorage.setItem("password", passEl.value);
-    localStorage.setItem("show_msg", true);
     window.location.href = "index.html";
 }

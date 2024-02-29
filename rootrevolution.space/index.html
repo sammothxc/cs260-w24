@@ -70,29 +70,5 @@
       <br />
       <soo>Source: <soo/><a href="https://github.com/sammothxc/startup">GitHub</a>
     </footer>
-    <script>
-      // Fetch username from local storage
-      const username = localStorage.getItem("userName");
-      const loginStatusElement = document.getElementById("loginStatus");
-      if (username) {
-        loginStatusElement.textContent = username;
-      } else {
-        const loginLink = document.createElement("a");
-        loginLink.href = "login.html";
-        loginLink.textContent = "Login";
-        loginStatusElement.appendChild(loginLink);
-        }
-      if (username) {
-        // Create a new element to display the welcome message
-        const welcomeMessage = document.createElement("p");
-        welcomeMessage.textContent = "Welcome, " + username + "!";
-        welcomeMessage.classList.add("welcome-message");
-        // Insert the welcome message into the document
-        document.body.insertBefore(welcomeMessage, document.body.firstChild);
-        setTimeout(() => {
-          welcomeMessage.remove();
-          }, 4000); // 4000 milliseconds = 4 seconds
-        }
-    </script>
   </body>
 </html>
