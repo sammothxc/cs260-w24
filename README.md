@@ -42,17 +42,26 @@ For this deliverable I built the structure of my application using HTML
 - [x] - Forms: there is a login form and a form to create a campaign
 - [x] - Images: there are images on the homescreen of campaigns
 - [x] - Tables: there is a table on the page of campaigns
-- [x] - DB/Login - Input box and submit button for login. The user info and campaign info represent data pulled from the database.
-- [x] - WebSocket - The WebSocket is used to update the homescreen with new campaigns
+- [x] - DB/Login: Input box and submit button for login. The user info and campaign info represent data pulled from the database.
+- [x] - WebSocket: The WebSocket is used to update the homescreen with new campaigns
 
 ## CSS Deliverable
 
 - [x] - Prerequisite: Simon CSS deployed to your production environment
 - [x] - Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
 - [x] - Prerequisite: Notes in your startup Git repository README.md file
-- [x] - 30% Header, footer, and main content body. Used grid to layout homescreen sections.
-- [x] - 20% Navigation elements. Nice nav menu effects and transitions.
-- [x] - 10% Responsive to window resizing. Looks great on iPad, desktop, and iPhone.
-- [x] - 20% Application elements. Buttons have nice styling and the homescreen is tiled
-- [x] - 10% Application text content. Text is colored and themed after my deliverable
-- [x] - 10% Application images. I made sure images were resizable and wouldn't ever be too large.
+- [x] - 30% Header, footer, and main content body: Used grid to layout homescreen sections
+- [x] - 20% Navigation elements: Nice nav menu effects and transitions
+- [x] - 10% Responsive to window resizing: Looks great on iPad, desktop, and iPhone
+- [x] - 20% Application elements: Buttons have nice styling and the homescreen is tiled
+- [x] - 10% Application text content: Text is colored and themed after my deliverable
+- [x] - 10% Application images: I made sure images were resizable and wouldn't ever be too large
+
+## JavaScript Deliverable
+- [x] - Prerequisite: Simon JavaScript deployed to your production environment
+- [x] - Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
+- [x] - Prerequisite: Notes in your startup Git repository README.md file
+- [x] - 20% JS Login: The user and password are set in local storage and the user is redirected to the homescreen
+- [ ] - 20% JS Database Data: 
+- [ ] - 20% JS WebSocket: 
+- [ ] - 40% JS Application Interaction Logic: 
