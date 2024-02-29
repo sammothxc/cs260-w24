@@ -33,22 +33,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     // Check if welcome message has been displayed for the current session
-    const welcomeMessageDisplayed = localStorage.getItem("welcomeMessageDisplayed");
+    let welcomeMessageDisplayed = localStorage.getItem("welcomeMessageDisplayed");
     if (!welcomeMessageDisplayed && username) {
-        // Show welcome message
-        const welcomeMessage = document.createElement("p");
-        welcomeMessage.textContent = "Welcome, " + username + "!";
-        welcomeMessage.classList.add("banner-message");
-        welcomeMessage.classList.add("poppins-semibold");
-        document.body.insertBefore(welcomeMessage, document.body.firstChild);
-        
-        // Set flag in local storage to indicate welcome message has been displayed
-        localStorage.setItem("welcomeMessageDisplayed", "true");
-    
-        // Remove the welcome message after animation completes
         setTimeout(() => {
-            welcomeMessage.remove();
-        }, 4000); // 4000 milliseconds = 4 seconds
+            welcomeMessageShow(username);
+        }, 500);
     }
 
     // Function to update the sitewide seed donation counter
@@ -74,3 +63,19 @@ document.addEventListener("DOMContentLoaded", function() {
     setInterval(updateSeedCounter, 2000); // Update every 5 seconds
   
 });
+
+function welcomeMessageShow(username) {
+    const welcomeMessage = document.createElement("p");
+    welcomeMessage.textContent = "Welcome, " + username + "!";
+    welcomeMessage.classList.add("banner-message");
+    welcomeMessage.classList.add("poppins-semibold");
+    document.body.insertBefore(welcomeMessage, document.body.firstChild);
+    
+    // Set flag in local storage to indicate welcome message has been displayed
+    localStorage.setItem("welcomeMessageDisplayed", "true");
+
+    // Remove the welcome message after animation completes
+    setTimeout(() => {
+        welcomeMessage.remove();
+    }, 4000); // 4000 milliseconds = 4 seconds
+}
