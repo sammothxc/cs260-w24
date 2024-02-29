@@ -33,3 +33,33 @@ document.addEventListener("DOMContentLoaded", function() {
         loginStatusElement.appendChild(loginLink);
     }
 });
+
+function register() {
+    const fullnameEl = document.querySelector("#fullname");
+    const emailEl = document.querySelector("#email");
+    const locationEl = document.querySelector("#location");
+    const usernameEl = document.querySelector("#username");
+    const passwordEl = document.querySelector("#password");
+
+    if (usernameEl.value.trim() === "" || passwordEl.value.trim() === "" || fullnameEl.value.trim() === "" || emailEl.value.trim() === "" || locationEl.value.trim() === "" || usernameEl.value.trim() === "" || passwordEl.value.trim() === "") {
+        alert("Please fill out all fields, or put N/A if not applicable.");
+        return;
+    }
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Adding 1 because months are zero-based
+    const day = String(currentDate.getDate()).padStart(2, '0');
+    const formattedDate = `${year}-${month}-${day}`;
+    const seedsdonated = 5930;
+    const seedsreceived = 340;
+
+    localStorage.setItem("membersince", formattedDate);
+    localStorage.setItem("fullname", fullnameEl.value);
+    localStorage.setItem("email", emailEl.value);
+    localStorage.setItem("location", locationEl.value);
+    localStorage.setItem("username", usernameEl.value);
+    localStorage.setItem("password", passwordEl.value);
+    localStorage.setItem("seedsdonated", seedsdonated);
+    localStorage.setItem("seedsreceived", seedsreceived);
+    window.location.href = "login.html";
+}

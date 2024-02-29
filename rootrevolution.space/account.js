@@ -32,4 +32,53 @@ document.addEventListener("DOMContentLoaded", function() {
         loginLink.textContent = "Login";
         loginStatusElement.appendChild(loginLink);
     }
+    let membersince = localStorage.getItem("membersince");
+    let fullname = localStorage.getItem("fullname");
+    let email = localStorage.getItem("email");
+    let location = localStorage.getItem("location");
+    let seedsdonated = localStorage.getItem("seedsdonated");
+    let seedsreceived = localStorage.getItem("seedsreceived");
+
+    if (username) {
+        const usernameElement = document.getElementById("username");
+        const memberSinceElement = document.getElementById("member-since");
+        const nameElement = document.getElementById("fullname");
+        const emailElement = document.getElementById("email");
+        const locationElement = document.getElementById("location");
+        const seedsDonatedElement = document.getElementById("seeds-donated");
+        const seedsReceivedElement = document.getElementById("seeds-received");
+
+        const usernametxt = document.createElement("p");
+        const memberSincetxt = document.createElement("p");
+        const nametxt = document.createElement("p");
+        const emailtxt = document.createElement("p");
+        const locationtxt = document.createElement("p");
+        const seedsDonatedtxt = document.createElement("p");
+        const seedsReceivedtxt = document.createElement("p");
+
+        usernametxt.textContent = "Username: " + username;
+        memberSincetxt.textContent = "Member Since: " + membersince;
+        nametxt.textContent = "Name: " + fullname;
+        emailtxt.textContent = "Email: " + email;
+        locationtxt.textContent = "Location: " + location;
+        seedsDonatedtxt.textContent = "Seeds Donated: " + seedsdonated;
+        seedsReceivedtxt.textContent = "Seeds Received: " + seedsreceived;
+
+        usernameElement.appendChild(usernametxt);
+        memberSinceElement.appendChild(memberSincetxt);
+        nameElement.appendChild(nametxt);
+        emailElement.appendChild(emailtxt);
+        locationElement.appendChild(locationtxt);
+        seedsDonatedElement.appendChild(seedsDonatedtxt);
+        seedsReceivedElement.appendChild(seedsReceivedtxt);
+
+        // usernameElement.textContent = userData.username;
+        // memberSinceElement.textContent = "Member Since: " + userData.memberSince;
+        // nameElement.textContent = "Name: " + userData.name;
+        // emailElement.textContent = "Email: " + userData.email;
+        // locationElement.textContent = "Location: " + userData.location;
+        // seedsDonatedElement.textContent = "Seeds Donated: " + userData.seedsDonated;
+        // seedsReceivedElement.textContent = "Seeds Received: " + userData.seedsReceived;
+    }
+
 });

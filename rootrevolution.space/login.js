@@ -35,13 +35,13 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function login() {
-    const nameEl = document.querySelector("#username");
-    const passEl = document.querySelector("#password");
-    if (nameEl.value.trim() === "" || passEl.value.trim() === "") {
+    const usernameEl = document.querySelector("#username");
+    const passwordEl = document.querySelector("#password");
+    if (usernameEl.value.trim() === "" || passwordEl.value.trim() === "") {
         alert("Please fill out both username and password fields.");
         return;
     }
-    localStorage.setItem("username", nameEl.value);
-    localStorage.setItem("password", passEl.value);
+    localStorage.setItem("username", usernameEl.value);
+    localStorage.setItem("password", passwordEl.value);
     window.location.href = "index.html";
 }
