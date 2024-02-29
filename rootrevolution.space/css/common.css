@@ -101,8 +101,12 @@ main button:hover {
 footer {
     background-color: #233115;
     color: #fff;
-    padding: 1rem;
+    padding: 2rem;
     margin-top: auto;
+}
+
+.content {
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
