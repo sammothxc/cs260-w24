@@ -132,6 +132,20 @@ footer a {
     footer {
         padding: 0.7rem;
     }
+    .content {
+        padding: 0.4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-left {
+        align-items: center;
+    }
+    .footer-right {
+        font-size: 1rem;
+        font-style: poppins-semibold;
+    }
 }
 
 footer a:hover {
