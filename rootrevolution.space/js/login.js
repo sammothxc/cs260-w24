@@ -36,37 +36,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const registered = localStorage.getItem("registered");
     if (!registrationMessageDisplayed && registered) {
         // Show welcome message
-        const registrationMessage = document.createElement("p");
-        registrationMessage.textContent = "Account created successfully!";
-        registrationMessage.classList.add("banner-message");
-        registrationMessage.classList.add("poppins-semibold");
-        document.body.insertBefore(registrationMessage, document.body.firstChild);
-        
-        // Set flag in local storage to indicate message has been displayed
-        localStorage.setItem("registrationMessageDisplayed", "true");
-        
-        // Remove the welcome message after animation completes
         setTimeout(() => {
-            registrationMessage.remove();
-        }, 4000); // 4000 milliseconds = 4 seconds
-    }
-    // Function to update the sitewide seed donation counter
-    function updateSeedCounter() {
-        const seedCounterElement = document.getElementById("seedCounter");
-        // Generate a random amount to increment the counter
-        const incrementAmount = Math.floor(Math.random() * 10) + 1; // Random number between 1 and 10
-        // Get the current value of the counter and parse it as an integer
-        let currentCount = parseInt(localStorage.getItem("seedCounter"));
-        if (!currentCount) {
-            // If the counter is not set, set it to 0
-            currentCount = 0;
-            localStorage.setItem("seedCounter", currentCount);
-        }
-        // Increment the counter by the random amount
-        currentCount += incrementAmount;
-        // Update the counter display
-        localStorage.setItem("seedCounter", currentCount);
-        seedCounterElement.textContent = currentCount + " Seeds Donated Since 2024!";
+            registrationMessageShow();
+        }, 500);
     }
     // Call the updateSeedCounter function every few seconds (e.g., every 5 seconds)
     setInterval(updateSeedCounter, 2000); // Update every 5 seconds
@@ -100,4 +72,36 @@ function errorMsg() {
     setTimeout(() => {
         errorMessage.remove();
     }, 4000);
+}
+
+function registrationMessageShow() {
+    const registrationMessage = document.createElement("p");
+    registrationMessage.textContent = "Registration successful! Welcome to RootRevolution!";
+    registrationMessage.classList.add("banner-message");
+    registrationMessage.classList.add("poppins-semibold");
+    document.body.insertBefore(registrationMessage, document.body.firstChild);
+    // Set flag in local storage to indicate registration message has been displayed
+    localStorage.setItem("registrationMessageDisplayed", "true");
+    // Remove the registration message after animation completes
+    setTimeout(() => {
+        registrationMessage.remove();
+    }, 4000); // 4000 milliseconds = 4 seconds
+}
+
+function updateSeedCounter() {
+    const seedCounterElement = document.getElementById("seedCounter");
+    // Generate a random amount to increment the counter
+    const incrementAmount = Math.floor(Math.random() * 10) + 1; // Random number between 1 and 10
+    // Get the current value of the counter and parse it as an integer
+    let currentCount = parseInt(localStorage.getItem("seedCounter"));
+    if (!currentCount) {
+        // If the counter is not set, set it to 0
+        currentCount = 0;
+        localStorage.setItem("seedCounter", currentCount);
+    }
+    // Increment the counter by the random amount
+    currentCount += incrementAmount;
+    // Update the counter display
+    localStorage.setItem("seedCounter", currentCount);
+    seedCounterElement.textContent = currentCount + " Seeds Donated Since 2024!";
 }
