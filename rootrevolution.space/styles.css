@@ -292,8 +292,8 @@ about img {
 /* Login styles */
 input[type="text"],
 input[type="password"] {
-  width: 200px; /* Adjust width as needed */
-  margin-right: 10px; /* Optional: Add margin between fields */
+    width: 200px; /* Adjust width as needed */
+    margin-right: 10px; /* Optional: Add margin between fields */
 }
 
 
@@ -307,6 +307,7 @@ footer {
 }
 
 /* Welcome message style */
+/* Center the welcome message */
 .welcome-message {
     text-align: center;
 }
