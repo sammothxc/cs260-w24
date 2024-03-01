@@ -26,17 +26,25 @@
         </header>
 
         <main>
-            <account-info>
-                <h1>Your Account</h1>
-                <h2 id="username"></h2>
-                <p id="member-since"></p>
-                <img src="img/placeholder-profile.jpg" alt="Profile Picture" width="125"/>
-                <p id="fullname"></p>
-                <p id="email"></p>
-                <p id="location"></p>
-                <p id="seeds-donated"></p>
-                <p id="seeds-received"></p>
-                <br />
+            <h1>Your Account</h1>
+            <div id="account" class="content-box">
+                <div id="account-info" class="account-info">
+                    <h2 id="username"></h2>
+                    <p id="member-since" class="date"></p>
+                    <br />
+                    <p id="fullname"></p>
+                    <p id="email"></p>
+                    <p id="location"></p>
+                    <p id="seeds-donated"></p>
+                    <p id="seeds-received"></p>
+                    <button class="poppins-semibold" id="start-campaign">Start Campaign</button>
+                </div>
+                <div id="profile-pic" class="profile-picture">
+                    <img src="img/placeholder-profile.jpg" class="img-container" alt="Profile Picture"/>
+                </div> 
+            </div>
+            <br />
+            <div id="campaigns" class="grid" class="content-box">
                 <h2>Campaigns Run:</h2>
                 <ul>
                 <li><a href="campaign.html">Campaign 1</a></li>
@@ -51,8 +59,8 @@
                 <li><a href="campaign.html">Campaign 4</a></li>
                 <img src="img/placeholder-campaign.jpg" alt="Campaign Picture" width="125"/>
                 </ul>
-            </account-info>
-        </main>
+            </div>
+         </main>
 
         <footer>
             <hr />
