@@ -11,10 +11,6 @@ main ul li {
     background-color: #f9f9f9;
 }
 
-main info img {
-    margin-bottom: 1rem;
-}
-
 main ul {
     list-style-type: none;
     padding: 0;
@@ -45,11 +41,11 @@ main a {
 }
 
 .account-info {
-    margin-right: 20px; /* Add some space between the account info and the profile picture */
     order: 2; /* Specify the order to display the account info on the left */
 }
 
 .profile-picture {
+    display: flex;
     flex-grow: 1;
     width: 100%; /* Set the width of the profile picture */
     order: 1; /* Specify the order to display the profile picture on the right */
@@ -59,6 +55,9 @@ main a {
     background-color: #f5f5f5;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    max-width: 73%;
+    margin: 0 auto;
+    align-self: flex-start;
 }
 
 main button {
