@@ -52,4 +52,31 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     // Call the updateSeedCounter function every few seconds (e.g., every 5 seconds)
     setInterval(updateSeedCounter, 2000); // Update every 5 seconds
+
+    // Code Block for adding to the sitewide seed counter
+
+    // document.getElementById('donationForm').addEventListener('submit', async (event) => {
+    //     event.preventDefault();
+    //     const amount = document.getElementById('amount').value;
+    //     const donorName = document.getElementById('donorName').value;
+    //     try {
+    //         const response = await fetch('/donate', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //             },
+    //             body: JSON.stringify({ amount, donorName })
+    //         });
+    //         if (response.ok) {
+    //             updateCounter();
+    //             alert('Donation submitted successfully');
+    //         } else {
+    //             alert('Failed to submit donation');
+    //         }
+    //     } catch (error) {
+    //         console.error('An error occurred while submitting donation:', error);
+    //         alert('Failed to submit donation');
+    //     }
+    // });
+
 });

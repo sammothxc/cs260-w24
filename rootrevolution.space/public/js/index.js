@@ -31,7 +31,20 @@ document.addEventListener("DOMContentLoaded", function() {
         loginLink.textContent = "Login";
         loginStatusElement.appendChild(loginLink);
     }
-    
+    // Code block for seed counter service endpoint
+
+    // const updateCounter = async () => {
+    //     try {
+    //         const response = await fetch('/donationCount');
+    //         const data = await response.json();
+    //         const counterElement = document.getElementById('counter');
+    //         counterElement.innerText = `Total Donations: ${data.count}`;
+    //     } catch (error) {
+    //         console.error('An error occurred while fetching donation count:', error);
+    //     }
+    // };
+    // updateCounter();
+
     // Check if welcome message has been displayed for the current session
     let welcomeMessageDisplayed = localStorage.getItem("welcomeMessageDisplayed");
     if (!welcomeMessageDisplayed && username) {
