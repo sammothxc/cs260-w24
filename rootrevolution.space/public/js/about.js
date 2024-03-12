@@ -68,8 +68,8 @@ function displayQuote(data) {
         quoteEl.textContent = data.content;
         authorEl.textContent = data.author;
   
-        containerEl.appendChild("&" + quoteEl + "&");
-        containerEl.appendChild("-" + authorEl);
+        containerEl.appendChild("\"" + quoteEl + "\"");
+        containerEl.appendChild("\-" + authorEl);
       });
   }
   
