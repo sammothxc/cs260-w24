@@ -58,7 +58,7 @@ function displayQuote(data) {
     fetch('https://api.quotable.io/random')
       .then((response) => response.json())
       .then((data) => {
-        const containerEl = document.querySelector('#carbon-footprint');
+        const containerEl = document.querySelector('#carbon');
   
         const quoteEl = document.createElement('p');
         quoteEl.classList.add('quote');
@@ -73,3 +73,4 @@ function displayQuote(data) {
       });
   }
   
+displayQuote();
