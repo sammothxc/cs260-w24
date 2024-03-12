@@ -88,7 +88,7 @@ My file for taking notes throughout the CS260 course
 - Any element can have zero or more classifications applied to it
 - Pseudo selectors select based on positional relationships, mouse interactions, hyperlink visitation states, and attributes
 
-## HTML startup
+## HTML
 - favicons can be pngs, all you need to do is link them in the head of the html file
 - the `title` tag is what is displayed in the browser tab
 - `<img>` tags can have a size attribute that is a percentage of the screen size
@@ -122,4 +122,6 @@ My file for taking notes throughout the CS260 course
 
 ## Fetch
 - Has good Chuck Norris jokes: `https://api.chucknorris.io/jokes/random`
-- 
+
+## Express Service
+- Acts like a type of "middleware" to handle requests
