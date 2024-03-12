@@ -34,6 +34,21 @@ document.addEventListener("DOMContentLoaded", function() {
     }    
     // Call the updateSeedCounter function every few seconds (e.g., every 5 seconds)
     setInterval(updateSeedCounter, 2000); // Update every 5 seconds
+
+    // Code Block for seed counter service endpoint
+
+    // const updateCounter = async () => {
+    //     try {
+    //         const response = await fetch('/donationCount');
+    //         const data = await response.json();
+    //         const counterElement = document.getElementById('counter');
+    //         counterElement.innerText = `Total Donations: ${data.count}`;
+    //     } catch (error) {
+    //         console.error('An error occurred while fetching donation count:', error);
+    //     }
+    // };
+
+    // updateCounter();
 });
 
 function updateSeedCounter() {
