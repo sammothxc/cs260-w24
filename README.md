@@ -37,31 +37,42 @@ Each campaign also gets its own page:
   
 ## HTML Deliverable
 For this deliverable I built the structure of my application using HTML
-- [x] - HTML pages: one for login, one for a homescreen, one for each campaign, amd one for each user, and one for a seed map
-- [x] - Links: there is a working nav menu with links to each page and links from the homescreen to each campaign
-- [x] - Forms: there is a login form and a form to create a campaign
-- [x] - Images: there are images on the homescreen of campaigns
-- [x] - Tables: there is a table on the page of campaigns
-- [x] - DB/Login: Input box and submit button for login. The user info and campaign info represent data pulled from the database.
-- [x] - WebSocket: The WebSocket is used to update the homescreen with new campaigns
+- [x] HTML pages: one for login, one for a homescreen, one for each campaign, amd one for each user, and one for a seed map
+- [x] Links: there is a working nav menu with links to each page and links from the homescreen to each campaign
+- [x] Forms: there is a login form and a form to create a campaign
+- [x] Images: there are images on the homescreen of campaigns
+- [x] Tables: there is a table on the page of campaigns
+- [x] DB/Login: Input box and submit button for login. The user info and campaign info represent data pulled from the database.
+- [x] WebSocket: The WebSocket is used to update the homescreen with new campaigns
 
 ## CSS Deliverable
 
-- [x] - Prerequisite: Simon CSS deployed to your production environment
-- [x] - Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
-- [x] - Prerequisite: Notes in your startup Git repository README.md file
-- [x] - 30% Header, footer, and main content body: Used grid to layout homescreen sections
-- [x] - 20% Navigation elements: Nice nav menu effects and transitions
-- [x] - 10% Responsive to window resizing: Looks great on iPad, desktop, and iPhone
-- [x] - 20% Application elements: Buttons have nice styling and the homescreen is tiled
-- [x] - 10% Application text content: Text is colored and themed after my deliverable
-- [x] - 10% Application images: I made sure images were resizable and wouldn't ever be too large
+- [x] Prerequisite: Simon CSS deployed to your production environment
+- [x] Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
+- [x] Prerequisite: Notes in your startup Git repository README.md file
+- [x] 30% Header, footer, and main content body: Used grid to layout homescreen sections
+- [x] 20% Navigation elements: Nice nav menu effects and transitions
+- [x] 10% Responsive to window resizing: Looks great on iPad, desktop, and iPhone
+- [x] 20% Application elements: Buttons have nice styling and the homescreen is tiled
+- [x] 10% Application text content: Text is colored and themed after my deliverable
+- [x] 10% Application images: I made sure images were resizable and wouldn't ever be too large
 
 ## JavaScript Deliverable
-- [x] - Prerequisite: Simon JavaScript deployed to your production environment
-- [x] - Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
-- [x] - Prerequisite: Notes in your startup Git repository README.md file
-- [x] - 20% JS Login: The user and password are set in local storage and the user is redirected to the homescreen, requires you to input both a username and password and gives an error banner if not
-- [X] - 20% JS Database Data: Recalls personal user data and displays it on the account page, and campaign info on campaign page *For now, it is only implemented in local storage*
-- [X] - 20% JS WebSocket: I used the setInterval function to periodically increase the "sitewide donation seed count" by a random amount. This will be replaced with WebSocket service calls later.
-- [X] - 40% JS Application Interaction Logic: Login nav menu item and Account nav item were merged. If you aren't logged, in the nav menu displays Login and if you are logged in, it displays your username and a Logout button. Added disappearing informational banners at the top of the page
+- [x] Prerequisite: Simon JavaScript deployed to your production environment
+- [x] Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
+- [x] Prerequisite: Notes in your startup Git repository README.md file
+- [x] 20% JS Login: The user and password are set in local storage and the user is redirected to the homescreen, requires you to input both a username and password and gives an error banner if not
+- [X] 20% JS Database Data: Recalls personal user data and displays it on the account page, and campaign info on campaign page *For now, it is only implemented in local storage*
+- [X] 20% JS WebSocket: I used the setInterval function to periodically increase the "sitewide donation seed count" by a random amount. This will be replaced with WebSocket service calls later.
+- [X] 40% JS Application Interaction Logic: Login nav menu item and Account nav item were merged. If you aren't logged, in the nav menu displays Login and if you are logged in, it displays your username and a Logout button. Added disappearing informational banners at the top of the page
+
+## Service Deliverable
+- [X] Prerequisite: Simon Service deployed to your production environment
+- [X] Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
+- [X] Prerequisite: Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable
+- [X] Prerequisite: At least 10 git commits spread consistently throughout the assignment period
+- [ ] 40% - Create an HTTP service using Node.js and Express
+- [ ] 10% - Frontend served up using Express static middleware
+- [ ] 10% - Your frontend calls third party service endpoints
+- [ ] 20% - Your backend provides service endpoints
+- [ ] 20% - Your frontend calls your service endpoints
