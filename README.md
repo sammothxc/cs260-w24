@@ -73,6 +73,6 @@ For this deliverable I built the structure of my application using HTML
 - [X] Prerequisite: At least 10 git commits spread consistently throughout the assignment period
 - [X] 40% - Create an HTTP service using Node.js and Express
 - [X] 10% - Frontend served up using Express static middleware
-- [ ] 10% - Your frontend calls third party service endpoints
-- [ ] 20% - Your backend provides service endpoints
-- [ ] 20% - Your frontend calls your service endpoints
+- [X] 10% - Your frontend calls third party service endpoints: I applied for an API license for a service that measures the carbon footprint and energy impact of my site and displays it for the users. They haven't given me an API key yet but I put a random quote generator in as a placeholder
+- [X] 20% - Your backend provides service endpoints: I added commented out code sitewide to handle things like the seed donation counter, and left it commented out as it depends on a database which isnt implemented yet
+- [X] 20% - Your frontend calls your service endpoints: I added commented out code sitewide to handle things like the seed donation counter, and left it commented out as it depends on a database which isnt implemented yet
