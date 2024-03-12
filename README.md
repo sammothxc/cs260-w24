@@ -71,8 +71,8 @@ For this deliverable I built the structure of my application using HTML
 - [X] Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
 - [X] Prerequisite: Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable
 - [X] Prerequisite: At least 10 git commits spread consistently throughout the assignment period
-- [ ] 40% - Create an HTTP service using Node.js and Express
-- [ ] 10% - Frontend served up using Express static middleware
+- [X] 40% - Create an HTTP service using Node.js and Express
+- [X] 10% - Frontend served up using Express static middleware
 - [ ] 10% - Your frontend calls third party service endpoints
 - [ ] 20% - Your backend provides service endpoints
 - [ ] 20% - Your frontend calls your service endpoints
