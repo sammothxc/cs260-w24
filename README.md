@@ -76,3 +76,14 @@ For this deliverable I built the structure of my application using HTML
 - [X] 10% - Your frontend calls third party service endpoints: I applied for an API license for a service that measures the carbon footprint and energy impact of my site and displays it for the users. They haven't given me an API key yet but I put a random quote generator in as a placeholder
 - [X] 20% - Your backend provides service endpoints: I added commented out code sitewide to handle things like the seed donation counter, and left it commented out as it depends on a database which isnt implemented yet
 - [X] 20% - Your frontend calls your service endpoints: I added commented out code sitewide to handle things like the seed donation counter, and left it commented out as it depends on a database which isnt implemented yet
+
+## Login Deliverable
+- [X] Prerequisite: Simon Login deployed to your production environment with your dbConfig.json credentials
+- [X] Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
+- [X] Prerequisite: Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the voter app as an example.
+- [X] Prerequisite: At least 10 git commits spread consistently throughout the assignment period.
+- [] 20% - Supports new user registration
+- [] 20% - Supports existing user authentication
+- [] 20% - Stores application data in MongoDB
+- [] 20% - Stores and retrieves credentials in MongoDB
+- [] 20% - Restricts application functionality based upon authentication
