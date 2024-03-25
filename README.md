@@ -7,11 +7,11 @@ https://startup.rootrevolution.store
 ## Design
 Each user has their own SeedFeed that shows them campaigns that they could support
 
-![Homescreen](homescreen.jpg)
+![Homescreen](cs260/homescreen.jpg)
 
 Each campaign also gets its own page:
 
-![Campaign](campaign.jpg)
+![Campaign](cs260/campaign.jpg)
 
 ## Key Features
 - Users have their own accounts to track their seed donations
