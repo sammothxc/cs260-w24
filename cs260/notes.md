@@ -125,3 +125,8 @@ My file for taking notes throughout the CS260 course
 
 ## Express Service
 - Acts like a type of "middleware" to handle requests
+
+## Atlas DB
+- MongoDB cloud service
+- Handy for storing data like user info and authentication data
+- Hostname: `cluster0.8etcjqp.mongodb.net`
