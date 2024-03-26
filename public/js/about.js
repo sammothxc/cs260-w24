@@ -68,3 +68,11 @@ function displayQuote(data) {
   }
   
 displayQuote();
+
+function logout() {
+    localStorage.removeItem('username');
+    localStorage.removeItem("welcomeMessageDisplayed");
+    fetch(`/api/auth/logout`, {
+        method: 'delete',
+    }).then(() => (window.location.href = '/'));
+}

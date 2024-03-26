@@ -47,3 +47,11 @@ function updateSeedCounter() {
     localStorage.setItem("seedCounter", currentCount);
     seedCounterElement.textContent = currentCount + " Seeds Donated Since 2024!";
 }
+
+function logout() {
+    localStorage.removeItem('username');
+    localStorage.removeItem("welcomeMessageDisplayed");
+    fetch(`/api/auth/logout`, {
+        method: 'delete',
+    }).then(() => (window.location.href = '/'));
+}

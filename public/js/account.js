@@ -98,3 +98,11 @@ function loadUserInfo() {
         // seedsReceivedElement.textContent = "Seeds Received: " + userData.seedsReceived;
     }
 }
+
+function logout() {
+    localStorage.removeItem('username');
+    localStorage.removeItem("welcomeMessageDisplayed");
+    fetch(`/api/auth/logout`, {
+        method: 'delete',
+    }).then(() => (window.location.href = '/'));
+}

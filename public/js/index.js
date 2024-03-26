@@ -1,13 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     menu();
     // Check if welcome message has been displayed for the current session
-    let welcomeMessageDisplayed = localStorage.getItem("welcomeMessageDisplayed");
-    if (!welcomeMessageDisplayed && username) {
-        setTimeout(() => {
-            welcomeMessageShow(username);
-        }, 500);
-    }
-
+    welCheck();
     // Call the updateSeedCounter function every few seconds (e.g., every 5 seconds)
     setInterval(updateSeedCounter, 2000); // Update every 5 seconds
   
@@ -92,5 +86,18 @@ function updateSeedCounter() {
 }
 
 function welCheck() {
+    let welcomeMessageDisplayed = localStorage.getItem("welcomeMessageDisplayed");
+    if (!welcomeMessageDisplayed && username) {
+        setTimeout(() => {
+            welcomeMessageShow(username);
+        }, 500);
+    }
+}
 
+function logout() {
+    localStorage.removeItem('username');
+    localStorage.removeItem("welcomeMessageDisplayed");
+    fetch(`/api/auth/logout`, {
+        method: 'delete',
+    }).then(() => (window.location.href = '/'));
 }
