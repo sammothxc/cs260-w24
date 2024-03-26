@@ -64,7 +64,7 @@ function register() {
     window.location.href = "register.html";
 }
 
-function errorMsg1() {
+function errorMsgEmpty() {
     const errorMessage = document.createElement("p");
     errorMessage.textContent = "Please enter a username and password.";
     errorMessage.classList.add("banner-message");
@@ -77,7 +77,7 @@ function errorMsg1() {
     }, 4000);
 }
 
-function errorMsg2() {
+function errorMsgIncorrect() {
     const errorMessage = document.createElement("p");
     errorMessage.textContent = "Username or password is incorrect.";
     errorMessage.classList.add("banner-message");
@@ -131,7 +131,7 @@ async function login(endpoint) {
     const username = document.querySelector('#username')?.value;
     const password = document.querySelector('#password')?.value;
     if (usernameEl.value.trim() === "" || passwordEl.value.trim() === "") {
-        errorMsg1();
+        errorMsgEmpty();
         return;
     }
 
@@ -148,10 +148,7 @@ async function login(endpoint) {
         window.location.href = 'index.html';
     } else {
         const body = await response.json();
-        const modalEl = document.querySelector('#msgModal');
-        modalEl.querySelector('.modal-body').textContent = `⚠ Error: ${body.msg}`;
-        const msgModal = new bootstrap.Modal(modalEl, {});
-        msgModal.show();
+        errorMsgIncorrect();
     }
 }
 

@@ -77,7 +77,7 @@ function register() {
     const passwordEl = document.querySelector("#password");
 
     if (usernameEl.value.trim() === "" || passwordEl.value.trim() === "" || fullnameEl.value.trim() === "" || emailEl.value.trim() === "" || locationEl.value.trim() === "" || usernameEl.value.trim() === "" || passwordEl.value.trim() === "") {
-        errorMsg();
+        errorMsgEmpty();
         return;
     }
     const currentDate = new Date();
@@ -112,7 +112,7 @@ function errorMsg() {
     }, 4000);
 }
 
-// JS Control
+// Register Control
 async function createUser() {
     create(`/api/auth/create`);
 }
@@ -121,7 +121,7 @@ async function create(endpoint) {
     const username = document.querySelector('#username')?.value;
     const password = document.querySelector('#password')?.value;
     if (usernameEl.value.trim() === "" || passwordEl.value.trim() === "") {
-        errorMsg1();
+        errorMsgEmpty();
         return;
     }
 
@@ -138,9 +138,26 @@ async function create(endpoint) {
         window.location.href = 'index.html';
     } else {
         const body = await response.json();
-        const modalEl = document.querySelector('#msgModal');
-        modalEl.querySelector('.modal-body').textContent = `⚠ Error: ${body.msg}`;
-        const msgModal = new bootstrap.Modal(modalEl, {});
-        msgModal.show();
+        errorMsgExisting();
     }
+}
+
+function errorMsgExisting() {
+    const errorMessage = document.createElement("p");
+    errorMessage.textContent = "Username or password is incorrect.";
+    errorMessage.classList.add("banner-message");
+    errorMessage.classList.add("error-message");
+    errorMessage.classList.add("slide-in");
+    errorMessage.classList.add("poppins-semibold");
+    document.body.insertBefore(errorMessage, document.body.firstChild);
+    setTimeout(() => {
+        errorMessage.remove();
+    }, 4000);
+}
+
+function logout() {
+    localStorage.removeItem('userName');
+    fetch(`/api/auth/logout`, {
+        method: 'delete',
+    }).then(() => (window.location.href = '/'));
 }
