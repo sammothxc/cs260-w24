@@ -59,26 +59,27 @@ document.addEventListener("DOMContentLoaded", function() {
     // updateCounter();
 });
 
-function login() {
-    const usernameEl = document.querySelector("#username");
-    const passwordEl = document.querySelector("#password");
-    if (usernameEl.value.trim() === "" || passwordEl.value.trim() === "") {
-        errorMsg();
-        return;
-    }
-    localStorage.setItem("username", usernameEl.value);
-    localStorage.setItem("password", passwordEl.value);
-    window.location.href = "index.html";
-}
-
 function register() {
     // Redirect to register.html
     window.location.href = "register.html";
 }
 
-function errorMsg() {
+function errorMsg1() {
     const errorMessage = document.createElement("p");
     errorMessage.textContent = "Please enter a username and password.";
+    errorMessage.classList.add("banner-message");
+    errorMessage.classList.add("error-message");
+    errorMessage.classList.add("slide-in");
+    errorMessage.classList.add("poppins-semibold");
+    document.body.insertBefore(errorMessage, document.body.firstChild);
+    setTimeout(() => {
+        errorMessage.remove();
+    }, 4000);
+}
+
+function errorMsg2() {
+    const errorMessage = document.createElement("p");
+    errorMessage.textContent = "Username or password is incorrect.";
     errorMessage.classList.add("banner-message");
     errorMessage.classList.add("error-message");
     errorMessage.classList.add("slide-in");
@@ -119,4 +120,53 @@ function updateSeedCounter() {
     // Update the counter display
     localStorage.setItem("seedCounter", currentCount);
     seedCounterElement.textContent = currentCount + " Seeds Donated Since 2024!";
+}
+
+// Login Control
+async function loginUser() {
+    login(`/api/auth/login`);
+}
+
+async function login(endpoint) {
+    const username = document.querySelector('#username')?.value;
+    const password = document.querySelector('#password')?.value;
+    if (usernameEl.value.trim() === "" || passwordEl.value.trim() === "") {
+        errorMsg1();
+        return;
+    }
+
+    const response = await fetch(endpoint, {
+        method: 'post',
+        body: JSON.stringify({ email: userName, password: password }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    });
+  
+    if (response.ok) {
+        localStorage.setItem('username', username);
+        window.location.href = 'index.html';
+    } else {
+        const body = await response.json();
+        const modalEl = document.querySelector('#msgModal');
+        modalEl.querySelector('.modal-body').textContent = `⚠ Error: ${body.msg}`;
+        const msgModal = new bootstrap.Modal(modalEl, {});
+        msgModal.show();
+    }
+}
+
+async function getUser(email) {
+    // See if we have a user with the given email.
+    const response = await fetch(`/api/user/${email}`);
+    if (response.status === 200) {
+        return response.json();
+    }
+    return null;
+}
+
+function logout() {
+    localStorage.removeItem('userName');
+    fetch(`/api/auth/logout`, {
+        method: 'delete',
+    }).then(() => (window.location.href = '/'));
 }
