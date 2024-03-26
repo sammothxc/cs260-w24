@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Fetch username from local storage
+    menu();
+    regCheck();
+    setInterval(updateSeedCounter, 2000); // Update every 5 seconds
+});
+
+
+function menu() {
     let username = localStorage.getItem("username");
     const loginStatusElement = document.getElementById("loginStatus");
     const accountLinkElement = document.getElementById("accountLink");
@@ -8,16 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const logoutLink = document.createElement("a");
         logoutLink.textContent = "Logout";
         logoutLink.href = "index.html";
-        logoutLink.onclick = function() {
-            // Remove username from local storage
-            localStorage.removeItem("username");
-            // Remove the welcome message flag from local storage
-            localStorage.removeItem("welcomeMessageDisplayed");
-            // Reload the page to reflect changes
-            location.reload();
-
-            return false;
-        };
+        logoutLink.onclick = logout();
         logoutLink.classList.add("li");
         loginStatusElement.appendChild(logoutLink);
         const userAccount = document.createElement("a");
@@ -32,32 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
         loginLink.textContent = "Login";
         loginStatusElement.appendChild(loginLink);
     }
-    const registrationMessageDisplayed = localStorage.getItem("registrationMessageDisplayed");
-    const registered = localStorage.getItem("registered");
-    if (!registrationMessageDisplayed && registered) {
-        // Show welcome message
-        setTimeout(() => {
-            registrationMessageShow();
-        }, 500);
-    }
-    // Call the updateSeedCounter function every few seconds (e.g., every 5 seconds)
-    setInterval(updateSeedCounter, 2000); // Update every 5 seconds
-
-    // Code block for seed counter service endpoint
-
-    // const updateCounter = async () => {
-    //     try {
-    //         const response = await fetch('/donationCount');
-    //         const data = await response.json();
-    //         const counterElement = document.getElementById('counter');
-    //         counterElement.innerText = `Total Donations: ${data.count}`;
-    //     } catch (error) {
-    //         console.error('An error occurred while fetching donation count:', error);
-    //     }
-    // };
-
-    // updateCounter();
-});
+}
 
 function register() {
     // Redirect to register.html
@@ -130,40 +102,48 @@ async function loginUser() {
 async function login(endpoint) {
     const username = document.querySelector('#username')?.value;
     const password = document.querySelector('#password')?.value;
-    if (usernameEl.value.trim() === "" || passwordEl.value.trim() === "") {
+    if (username.value.trim() === "" || password.value.trim() === "") {
         errorMsgEmpty();
         return;
     }
-
     const response = await fetch(endpoint, {
         method: 'post',
-        body: JSON.stringify({ email: userName, password: password }),
+        body: JSON.stringify({ username: username, password: password }),
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
         },
     });
-  
     if (response.ok) {
         localStorage.setItem('username', username);
         window.location.href = 'index.html';
     } else {
-        const body = await response.json();
         errorMsgIncorrect();
     }
 }
 
-async function getUser(email) {
-    // See if we have a user with the given email.
-    const response = await fetch(`/api/user/${email}`);
-    if (response.status === 200) {
-        return response.json();
-    }
-    return null;
-}
+// async function getUser(email) {
+//     // See if we have a user with the given email.
+//     const response = await fetch(`/api/user/${email}`);
+//     if (response.status === 200) {
+//         return response.json();
+//     }
+//     return null;
+// }
 
 function logout() {
-    localStorage.removeItem('userName');
+    localStorage.removeItem('username');
+    localStorage.removeItem("welcomeMessageDisplayed");
     fetch(`/api/auth/logout`, {
         method: 'delete',
     }).then(() => (window.location.href = '/'));
+}
+
+function regCheck() {
+    const registrationMessageDisplayed = localStorage.getItem("registrationMessageDisplayed");
+    const registered = localStorage.getItem("registered");
+    if (!registrationMessageDisplayed && registered) {
+        setTimeout(() => {
+            registrationMessageShow();
+        }, 500);
+    }
 }
