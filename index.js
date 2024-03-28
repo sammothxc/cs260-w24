@@ -124,7 +124,7 @@ app.listen(port, () => {
 
 apiRouter.delete('/del/:username', async (req, res) => {
     try {
-        const username = req.body.username;
+        const username = req.params.username;
         // Add authentication and authorization logic here if needed
         // For example, verify that the user making the request is authorized to delete the account
 
@@ -134,11 +134,14 @@ apiRouter.delete('/del/:username', async (req, res) => {
         // Check if the user was found and deleted
         if (result.deletedCount === 1) {
             res.status(200).send({ msg: 'User account deleted successfully' });
+            return 0;
         } else {
             res.status(404).send({ msg: 'User account not found' });
+            return 2;
         }
     } catch (error) {
         console.error('Error deleting user account:', error);
         res.status(500).send({ msg: 'Internal server error' });
+        return 1;
     }
 });

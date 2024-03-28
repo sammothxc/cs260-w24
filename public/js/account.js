@@ -1,4 +1,4 @@
-
+localStorage.removeItem("attemptedDelete");
 async function loadUserInfo() {
     try {
         // Get the uinfo from the service
@@ -157,15 +157,16 @@ async function deleteAccount() {
         } else {
             try {
                 const username = localStorage.getItem("username");
-                deleteUser(username);
-                if (response.ok) {
+                const response = await deleteUser(username);
+                console.log(response);
+                if (response === 200) {
                     // Account deletion successful
                     //localStorage.removeItem("username");
                     localStorage.clear();
                     window.location.href = '/'; // Redirect to the homepage or login page
                 } else {
                     // Handle error response
-                    console.error('Error deleting account:', response.statusText);
+                    console.error('Error deleting account:' + response);
                     msgBanner('Error deleting account', true);
                     // Display an error message to the user if necessary
                 }
@@ -198,24 +199,9 @@ function msgBanner(msg, error = false) {
 //     return null;
 // }
 
-async function deleteAccount() {
-    try {
-        const response = await fetch(`/api/del/${username}`, {
-            method: 'DELETE',
-        });
-
-        if (response.ok) {
-            // Account deletion successful
-            localStorage.removeItem("username");
-            localStorage.removeItem("welcomeMessageDisplayed");
-            window.location.href = '/'; // Redirect to the homepage or login page
-        } else {
-            // Handle error response
-            console.error('Error deleting account:', response.statusText);
-            // Display an error message to the user if necessary
-        }
-    } catch (error) {
-        console.error('Error deleting account:', error.message);
-        // Display an error message to the user if necessary
-    }
+async function deleteUser(username) {
+    const response = await fetch(`/api/del/${username}`, {
+        method: 'DELETE',
+    });
+    return response.status;
 }
