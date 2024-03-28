@@ -27,7 +27,7 @@ async function create(endpoint) {
     const fullname = document.querySelector("#fullname")?.value;
     const email = document.querySelector("#email")?.value;
     const location = document.querySelector("#location")?.value;
-    if (username.value.trim() === "" || password.value.trim() === "" || fullname.value.trim() === "" || email.value.trim() === "" || location.value.trim() === "" || username.value.trim() === "" || password.value.trim() === "") {
+    if (username.trim() === "" || password.trim() === "" || fullname.trim() === "" || email.trim() === "" || location.trim() === "" || username.trim() === "" || password.trim() === "") {
         errorMsgEmpty();
         return;
     }
@@ -126,4 +126,17 @@ function updateSeedCounter() {
     // Update the counter display
     localStorage.setItem("seedCounter", currentCount);
     seedCounterElement.textContent = currentCount + " Seeds Donated Since 2024!";
+}
+
+function errorMsgEmpty() {
+    const errorMessage = document.createElement("p");
+    errorMessage.textContent = "Please enter all info.";
+    errorMessage.classList.add("banner-message");
+    errorMessage.classList.add("error-message");
+    errorMessage.classList.add("slide-in");
+    errorMessage.classList.add("poppins-semibold");
+    document.body.insertBefore(errorMessage, document.body.firstChild);
+    setTimeout(() => {
+        errorMessage.remove();
+    }, 4000);
 }
