@@ -63,3 +63,17 @@ main a {
 main button {
     margin-top: 1.5rem;
 }
+
+.delete-account-btn {
+    background-color: #ff3333; /* Red background color */
+    color: #fff; /* White text color */
+    padding: 10px 20px; /* Padding around the text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Show pointer cursor on hover */
+    margin-top: 20px; /* Add some top margin */
+}
+
+.delete-account-btn:hover {
+    background-color: #cc0000; /* Darker red background color on hover */
+}

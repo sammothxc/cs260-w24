@@ -46,8 +46,17 @@ async function createUser(username, password, fullname, email, location, members
     return user;
 }
 
+// function deleteUser(username) {
+//     return userCollection.deleteOne({username: username});
+// }
+
+async function deleteUser(username) {
+    return await userCollection.deleteOne({ username: username });
+}
+
 module.exports = {
     getUser,
     getUserByToken,
     createUser,
+    deleteUser
 };

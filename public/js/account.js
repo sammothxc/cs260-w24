@@ -1,3 +1,4 @@
+
 async function loadUserInfo() {
     try {
         // Get the uinfo from the service
@@ -141,4 +142,58 @@ function updateSeedCounter() {
     // Update the counter display
     localStorage.setItem("seedCounter", currentCount);
     seedCounterElement.textContent = currentCount + " Seeds Donated Since 2024!";
+}
+
+async function deleteAccount() {
+    let attemptedDelete = localStorage.getItem("attemptedDelete");
+    if (!attemptedDelete) {
+        localStorage.setItem("attemptedDelete", 1);
+        msgBanner('Are you sure you want to delete your account? Click the delete button 3 times to confirm.', true);
+        return;
+    } else {
+        if (parseInt(attemptedDelete) <= 2) {
+            localStorage.setItem("attemptedDelete", parseInt(attemptedDelete) + 1);
+            return;
+        } else {
+            try {
+                const username = localStorage.getItem("username");
+                deleteUser(username);
+                if (response.ok) {
+                    // Account deletion successful
+                    //localStorage.removeItem("username");
+                    localStorage.clear();
+                    window.location.href = '/'; // Redirect to the homepage or login page
+                } else {
+                    // Handle error response
+                    console.error('Error deleting account:', response.statusText);
+                    msgBanner('Error deleting account', true);
+                    // Display an error message to the user if necessary
+                }
+            } catch (error) {
+                console.error('Error deleting account:', error.message);
+                msgBanner('Error deleting account', true);
+                // Display an error message to the user if necessary
+            }
+        }
+    }
+}
+
+function msgBanner(msg, error = false) {
+    const msgB = document.createElement("p");
+    msgB.textContent = msg;
+    msgB.classList.add("banner-message");
+    msgB.classList.add("poppins-semibold");
+    if(error) { msgB.classList.add("error-message"); }
+    document.body.insertBefore(msgB, document.body.firstChild);
+    setTimeout(() => {
+        msgB.remove();
+    }, 4000); // 4000 milliseconds = 4 seconds
+}
+
+async function deleteUser(username) {
+    const response = await fetch(`/api/user/${username}`);
+    if (response.status === 200) {
+        return response.json();
+    }
+    return null;
 }
