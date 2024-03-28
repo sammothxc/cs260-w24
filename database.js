@@ -12,40 +12,40 @@ const userCollection = db.collection('userInfo');
 
 // This will asynchronously test the connection and exit the process if it fails
 (async function testConnection() {
-  await client.connect();
-  await db.command({ ping: 1 });
+    await client.connect();
+    await db.command({ ping: 1 });
 })().catch((ex) => {
-  console.log(`Unable to connect to database with ${url} because ${ex.message}`);
-  process.exit(1);
+    console.log(`Unable to connect to database with ${url} because ${ex.message}`);
+    process.exit(1);
 });
 
-// function getUser(userName) {
-//   return userCollection.findOne({ userName: userName });
-// }
+function getUser(userName) {
+    return userCollection.findOne({ userName: userName });
+}
 
 function getUserByToken(token) {
-  return userCollection.findOne({ token: token });
+    return userCollection.findOne({ token: token });
 }
 
 async function createUser(fullName, email, city, userName, password) {
-  // Hash the password before we insert it into the database
-  const passwordHash = await bcrypt.hash(password, 10);
-  const user = {
-    fullName: fullName,
-    email: email,
-    city: city,
-    userName: userName,
-    password: passwordHash,
-    token: uuid.v4(),
-  };
-  await userCollection.insertOne(user);
-  return user;
+    // Hash the password before we insert it into the database
+    const passwordHash = await bcrypt.hash(password, 10);
+    const user = {
+        fullName: fullName,
+        email: email,
+        city: city,
+        userName: userName,
+        password: passwordHash,
+        token: uuid.v4(),
+    };
+    await userCollection.insertOne(user);
+    return user;
 }
 
 module.exports = {
-  getUser,
-  getUserByToken,
-  createUser,
-  addScore,
-  getHighScores,
+    getUser,
+    getUserByToken,
+    createUser,
+    addScore,
+    getHighScores,
 };
