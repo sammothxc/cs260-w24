@@ -14,7 +14,13 @@ function menu() {
         const logoutLink = document.createElement("a");
         logoutLink.textContent = "Logout";
         logoutLink.href = "index.html";
-        logoutLink.onclick = logout();
+        logoutLink.onclick = function(){
+            localStorage.removeItem("username");
+            localStorage.removeItem("welcomeMessageDisplayed");
+            fetch(`/api/auth/logout`, {
+                method: 'delete',
+            }).then(() => (window.location.href = '/'));
+        };
         logoutLink.classList.add("li");
         loginStatusElement.appendChild(logoutLink);
         const userAccount = document.createElement("a");
@@ -97,12 +103,4 @@ function loadUserInfo() {
         // seedsDonatedElement.textContent = "Seeds Donated: " + userData.seedsDonated;
         // seedsReceivedElement.textContent = "Seeds Received: " + userData.seedsReceived;
     }
-}
-
-function logout() {
-    localStorage.removeItem('username');
-    localStorage.removeItem("welcomeMessageDisplayed");
-    fetch(`/api/auth/logout`, {
-        method: 'delete',
-    }).then(() => (window.location.href = '/'));
 }

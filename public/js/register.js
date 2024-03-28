@@ -76,14 +76,6 @@ function errorMsgExisting() {
     }, 4000);
 }
 
-function logout() {
-    localStorage.removeItem('username');
-    localStorage.removeItem("welcomeMessageDisplayed");
-    fetch(`/api/auth/logout`, {
-        method: 'delete',
-    }).then(() => (window.location.href = '/'));
-}
-
 function menu() {
     let username = localStorage.getItem("username");
     const loginStatusElement = document.getElementById("loginStatus");
@@ -93,7 +85,13 @@ function menu() {
         const logoutLink = document.createElement("a");
         logoutLink.textContent = "Logout";
         logoutLink.href = "index.html";
-        logoutLink.onclick = logout();
+        logoutLink.onclick = function(){
+            localStorage.removeItem("username");
+            localStorage.removeItem("welcomeMessageDisplayed");
+            fetch(`/api/auth/logout`, {
+                method: 'delete',
+            }).then(() => (window.location.href = '/'));
+        };
         logoutLink.classList.add("li");
         loginStatusElement.appendChild(logoutLink);
         const userAccount = document.createElement("a");

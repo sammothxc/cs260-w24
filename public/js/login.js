@@ -100,6 +100,7 @@ async function login(endpoint) {
     });
     if (response.ok) {
         localStorage.setItem("username", username);
+        localStorage.setItem("registrationMessageDisplayed", "true");
         window.location.href = 'index.html';
     } else {
         const body = await response.json();
