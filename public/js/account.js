@@ -190,10 +190,32 @@ function msgBanner(msg, error = false) {
     }, 4000); // 4000 milliseconds = 4 seconds
 }
 
-async function deleteUser(username) {
-    const response = await fetch(`/api/user/${username}`);
-    if (response.status === 200) {
-        return response.json();
+// async function deleteUser(username) {
+//     const response = await fetch(`/api/user/${username}`);
+//     if (response.status === 200) {
+//         return response.json();
+//     }
+//     return null;
+// }
+
+async function deleteAccount() {
+    try {
+        const response = await fetch(`/api/del/${username}`, {
+            method: 'DELETE',
+        });
+
+        if (response.ok) {
+            // Account deletion successful
+            localStorage.removeItem("username");
+            localStorage.removeItem("welcomeMessageDisplayed");
+            window.location.href = '/'; // Redirect to the homepage or login page
+        } else {
+            // Handle error response
+            console.error('Error deleting account:', response.statusText);
+            // Display an error message to the user if necessary
+        }
+    } catch (error) {
+        console.error('Error deleting account:', error.message);
+        // Display an error message to the user if necessary
     }
-    return null;
 }
