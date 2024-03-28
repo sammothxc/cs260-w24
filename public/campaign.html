@@ -31,22 +31,28 @@
             <h5>&lt;username&gt; in &lt;city, zip&gt;</h5>
             <img src="img/placeholder-campaign.jpg" alt="Campaign Picture" width="100%"/>
             <h3>&lt;campaign description&gt;</h3>
-            <p>Seed Type(s) Requesting:</p>
+            <p>Seeds Requesting</p>
             <table>
             <thead>
                 <tr>
                     <th>Seed Type</th>
-                    <th>Quantity</th>
+                    <th>Quantity Requesting</th>
+                    <th>Donate</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>&lt;seed type&gt;</td>
                     <td>&lt;number of seed&gt;</td>
+                    <td><input type="number" id="seedQuantity1" min="1" max="10000000" value="1" /> <!-- Quantity selector -->
+                    <button class="donate small" onclick="donateSeeds()">Donate</button></td> <!-- Donate button --></td>
                 </tr>
                 <tr>
                     <td>&lt;seed type&gt;</td>
                     <td>&lt;number of seed&gt;</td>
+                    <td><input type="number" id="seedQuantity2" min="1" max="10000000" value="1" /> <!-- Quantity selector -->
+                    <button class="donate small" onclick="donateSeeds()">Donate</button></td> <!-- Donate button --></td>
+
                 </tr>
             </tbody>
             </table>

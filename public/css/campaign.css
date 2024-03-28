@@ -12,9 +12,16 @@ main img {
 main table {
     width: 100%;
     border-collapse: collapse;
+    text-align: center;
 }
 
-main table th, campaign table td {
+main table th, main table td, campaign table td {
     padding: 0.5rem;
     border: 1px solid #ccc;
+}
+
+/* Add this CSS to make the button smaller */
+button.donate.small {
+    font-size: 0.8rem; /* Adjust the font size as needed */
+    padding: 0.25rem 0.5rem; /* Adjust the padding as needed */
 }

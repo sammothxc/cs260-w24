@@ -1,3 +1,14 @@
+// (async () => {
+//     const userName = localStorage.getItem('username');
+//     if (userName) {
+//       setDisplay('loginControls', 'none');
+//       setDisplay('playControls', 'block');
+//     } else {
+//       setDisplay('loginControls', 'block');
+//       setDisplay('playControls', 'none');
+//     }
+//   })();
+
 document.addEventListener("DOMContentLoaded", function() {
     menu();
     // Call the updateSeedCounter function every few seconds (e.g., every 5 seconds)
@@ -52,4 +63,56 @@ function updateSeedCounter() {
     // Update the counter display
     localStorage.setItem("seedCounter", currentCount);
     seedCounterElement.textContent = currentCount + " Seeds Donated Since 2024!";
+}
+
+function donateSeeds() {
+    const seedType = 'Seed Type'; // Retrieve seed type from the row if needed
+    const seedQuantity = document.getElementById('seedQuantity1').value; // Get the selected quantity
+    // Call a function to send the donation data to the server
+    let username = localStorage.getItem("username");
+    if (!username) {
+        msgBanner('Please login to donate seeds.', true);
+        return;
+    }
+    sendDonation(seedType, seedQuantity);
+}
+
+function sendDonation(seedType, seedQuantity) {
+    // Make a fetch request to send donation data to the server
+    fetch('/api/donate', {
+        method: 'post',
+        body: JSON.stringify({
+            seedType: seedType,
+            seedQuantity: seedQuantity
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+    .then(response => {
+        if (response.ok) {
+            // Donation successful
+            msgBanner('Thank you for your donation!');
+            // You can update the UI to reflect the donation if needed
+        } else {
+            // Error handling for failed donation
+            msgBanner('Failed to donate seeds. Please try again later.', true);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        msgBanner('Failed to donate seeds. Please try again later.', true);
+    });
+}
+
+function msgBanner(msg, error = false) {
+    const msgB = document.createElement("p");
+    msgB.textContent = msg;
+    msgB.classList.add("banner-message");
+    msgB.classList.add("poppins-semibold");
+    if(error) { msgB.classList.add("error-message"); }
+    document.body.insertBefore(msgB, document.body.firstChild);
+    setTimeout(() => {
+        welcomeMessage.remove();
+    }, 4000); // 4000 milliseconds = 4 seconds
 }
