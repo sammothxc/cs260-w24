@@ -52,6 +52,7 @@ function menu() {
         logoutLink.href = "index.html";
         logoutLink.onclick = function(){
             localStorage.removeItem("username");
+            localStorage.removeItem("registered");
             localStorage.removeItem("welcomeMessageDisplayed");
             fetch(`/api/auth/logout`, {
                 method: 'delete',
