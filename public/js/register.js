@@ -41,7 +41,7 @@ async function create(endpoint) {
     const response = await fetch(endpoint, {
         method: 'post',
         body: JSON.stringify({
-            email: username,
+            username: username,
             password: password,
             fullname: fullname,
             email: email,
@@ -65,7 +65,7 @@ async function create(endpoint) {
 
 function errorMsgExisting() {
     const errorMessage = document.createElement("p");
-    errorMessage.textContent = "Username or password is incorrect.";
+    errorMessage.textContent = "Account already exists.";
     errorMessage.classList.add("banner-message");
     errorMessage.classList.add("error-message");
     errorMessage.classList.add("slide-in");

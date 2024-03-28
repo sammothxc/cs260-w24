@@ -27,15 +27,18 @@ function getUserByToken(token) {
     return userCollection.findOne({ token: token });
 }
 
-async function createUser(fullname, email, city, username, password) {
+async function createUser(username, password, fullname, email, location, membersince, seeedsdonated, seedsreceived) {
     // Hash the password before we insert it into the database
     const passwordHash = await bcrypt.hash(password, 10);
     const user = {
         fullname: fullname,
         email: email,
-        city: city,
+        location: location,
         username: username,
         password: passwordHash,
+        membersince: membersince,
+        seedsdonated: seeedsdonated,
+        seedsreceived: seedsreceived,
         token: uuid.v4(),
     };
     await userCollection.insertOne(user);
