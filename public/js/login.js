@@ -102,7 +102,7 @@ async function loginUser() {
 async function login(endpoint) {
     const username = document.querySelector('#username')?.value;
     const password = document.querySelector('#password')?.value;
-    if (username.value.trim() === "" || password.value.trim() === "") {
+    if (username.trim() === "" || password.trim() === "") {
         errorMsgEmpty();
         return;
     }
