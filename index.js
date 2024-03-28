@@ -21,7 +21,7 @@ apiRouter.post('/auth/create', async (req, res) => {
     if (await DB.getUser(req.body.username)) {
         res.status(409).send({ msg: 'Existing user' });
     } else {
-        const user = await DB.createUser(req.body.username, req.body.password);
+        const user = await DB.createUser(req.body.username, req.body.password, req.body.fullname, req.body.email, req.body.location, req.body.membersince, req.body.seedsdonated, req.body.seedsreceived);
 
         setAuthCookie(res, user.token);
 
@@ -62,11 +62,12 @@ apiRouter.get('/uinfo', async (req, res) => {
     const authToken = req.cookies.token;
     const user = await DB.getUserByToken(authToken);
     if (user) {
+        // FELUPMSST
         res.send({
-            username: user.username,
             fullname: user.fullname,
             email: user.email,
             location: user.location,
+            username: user.username,
             membersince: user.membersince,
             seedsdonated: user.seedsdonated,
             seedsreceived: user.seedsreceived

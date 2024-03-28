@@ -30,6 +30,7 @@ function getUserByToken(token) {
 async function createUser(username, password, fullname, email, location, membersince, seeedsdonated, seedsreceived) {
     // Hash the password before we insert it into the database
     const passwordHash = await bcrypt.hash(password, 10);
+    // FELUPMSST
     const user = {
         fullname: fullname,
         email: email,
@@ -49,6 +50,4 @@ module.exports = {
     getUser,
     getUserByToken,
     createUser,
-    // addScore,
-    // getHighScores,
 };

@@ -5,11 +5,11 @@ async function loadUserInfo() {
         const uinfo = await response.json();
 
         const {
-            username,
-            membersince,
             fullname,
             email,
             location,
+            username,
+            membersince,
             seedsdonated,
             seedsreceived
         } = uinfo;
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
     menu();
     setInterval(updateSeedCounter, 2000); // Update every 5 seconds
 });
-
+loadUserInfo()
 function menu() {
     let username = localStorage.getItem("username");
     const loginStatusElement = document.getElementById("loginStatus");
