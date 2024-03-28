@@ -57,7 +57,7 @@ async function create(endpoint) {
     if (response.ok) {
         localStorage.setItem("username", username);
         localStorage.setItem("registered", true);
-        window.location.href = 'login.html';
+        window.location.href = 'index.html';
     } else {
         errorMsgExisting();
     }
