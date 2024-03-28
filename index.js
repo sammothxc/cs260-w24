@@ -58,6 +58,24 @@ apiRouter.get('/user/:username', async (req, res) => {
     res.status(404).send({ msg: 'Unknown' });
 });
 
+apiRouter.get('/uinfo', async (req, res) => {
+    const authToken = req.cookies.token;
+    const user = await DB.getUserByToken(authToken);
+    if (user) {
+        res.send({
+            username: user.username,
+            fullname: user.fullname,
+            email: user.email,
+            location: user.location,
+            membersince: user.membersince,
+            seedsdonated: user.seedsdonated,
+            seedsreceived: user.seedsreceived
+        });
+    } else {
+        res.status(401).send({ msg: 'Unauthorized' });
+    }
+});
+
 var secureApiRouter = express.Router();
 apiRouter.use(secureApiRouter);
 
