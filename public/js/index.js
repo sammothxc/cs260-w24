@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     menu();
     // Check if welcome message has been displayed for the current session
-    welCheck();
     regCheck();
+    welCheck();
     // Call the updateSeedCounter function every few seconds (e.g., every 5 seconds)
     setInterval(updateSeedCounter, 2000); // Update every 5 seconds
   
@@ -92,8 +92,9 @@ function updateSeedCounter() {
 
 function welCheck() {
     let welcomeMessageDisplayed = localStorage.getItem("welcomeMessageDisplayed");
+    let registered = localStorage.getItem("registered");
     let username = localStorage.getItem("username");
-    if (!welcomeMessageDisplayed && username && registrationMessageDisplayed) {
+    if (!welcomeMessageDisplayed && username && !registered) {
         setTimeout(() => {
             welcomeMessageShow(username);
         }, 500);
