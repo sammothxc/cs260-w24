@@ -7,7 +7,7 @@ do
     esac
 done
 
-if [[ -z "$key" || -z "$hostname" || -z "$service" ]]; then
+if [[ -z "$key" || -h "$hostname" || -s "$service" ]]; then
     printf "\nMissing required parameter.\n"
     printf "  syntax: deployService.sh -k <pem key file> -h <hostname> -s <service>\n\n"
     exit 1

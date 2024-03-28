@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
     menu();
-    regCheck();
     setInterval(updateSeedCounter, 2000); // Update every 5 seconds
 });
 
@@ -62,20 +61,6 @@ function errorMsgIncorrect() {
     }, 4000);
 }
 
-function registrationMessageShow() {
-    const registrationMessage = document.createElement("p");
-    registrationMessage.textContent = "Registration successful! Welcome to RootRevolution!";
-    registrationMessage.classList.add("banner-message");
-    registrationMessage.classList.add("poppins-semibold");
-    document.body.insertBefore(registrationMessage, document.body.firstChild);
-    // Set flag in local storage to indicate registration message has been displayed
-    localStorage.setItem("registrationMessageDisplayed", "true");
-    // Remove the registration message after animation completes
-    setTimeout(() => {
-        registrationMessage.remove();
-    }, 4000); // 4000 milliseconds = 4 seconds
-}
-
 function updateSeedCounter() {
     const seedCounterElement = document.getElementById("seedCounter");
     // Generate a random amount to increment the counter
@@ -113,10 +98,8 @@ async function login(endpoint) {
             'Content-type': 'application/json; charset=UTF-8',
         },
     });
-    console.log(`chk 1`);
     if (response.ok) {
         localStorage.setItem("username", username);
-        console.log(`chk 2`);
         window.location.href = 'index.html';
     } else {
         const body = await response.json();
@@ -139,14 +122,4 @@ function logout() {
     fetch(`/api/auth/logout`, {
         method: 'delete',
     }).then(() => (window.location.href = '/'));
-}
-
-function regCheck() {
-    const registrationMessageDisplayed = localStorage.getItem("registrationMessageDisplayed");
-    const registered = localStorage.getItem("registered");
-    if (!registrationMessageDisplayed && registered) {
-        setTimeout(() => {
-            registrationMessageShow();
-        }, 500);
-    }
 }

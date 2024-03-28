@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     menu();
     // Check if welcome message has been displayed for the current session
     welCheck();
+    regCheck();
     // Call the updateSeedCounter function every few seconds (e.g., every 5 seconds)
     setInterval(updateSeedCounter, 2000); // Update every 5 seconds
   
@@ -46,11 +47,16 @@ function menu() {
     const loginStatusElement = document.getElementById("loginStatus");
     const accountLinkElement = document.getElementById("accountLink");
     if (username) {
-        // User is logged in, display username and logout button
         const logoutLink = document.createElement("a");
         logoutLink.textContent = "Logout";
         logoutLink.href = "index.html";
-        logoutLink.onclick = logout();
+        logoutLink.onclick = function(){
+            localStorage.removeItem("username");
+            localStorage.removeItem("welcomeMessageDisplayed");
+            fetch(`/api/auth/logout`, {
+                method: 'delete',
+            }).then(() => (window.location.href = '/'));
+        };
         logoutLink.classList.add("li");
         loginStatusElement.appendChild(logoutLink);
         const userAccount = document.createElement("a");
@@ -59,7 +65,6 @@ function menu() {
         userAccount.classList.add("li");
         accountLinkElement.appendChild(userAccount);
     } else {
-        // User is not logged in, display login link
         const loginLink = document.createElement("a");
         loginLink.href = "login.html";
         loginLink.textContent = "Login";
@@ -95,10 +100,26 @@ function welCheck() {
     }
 }
 
-function logout() {
-    localStorage.removeItem("username");
-    localStorage.removeItem("welcomeMessageDisplayed");
-    fetch(`/api/auth/logout`, {
-        method: 'delete',
-    }).then(() => (window.location.href = '/'));
+function regCheck() {
+    const registrationMessageDisplayed = localStorage.getItem("registrationMessageDisplayed");
+    const registered = localStorage.getItem("registered");
+    if (!registrationMessageDisplayed && registered) {
+        setTimeout(() => {
+            registrationMessageShow();
+        }, 500);
+    }
+}
+
+function registrationMessageShow() {
+    const registrationMessage = document.createElement("p");
+    registrationMessage.textContent = "Registration successful! Welcome to RootRevolution!";
+    registrationMessage.classList.add("banner-message");
+    registrationMessage.classList.add("poppins-semibold");
+    document.body.insertBefore(registrationMessage, document.body.firstChild);
+    // Set flag in local storage to indicate registration message has been displayed
+    localStorage.setItem("registrationMessageDisplayed", "true");
+    // Remove the registration message after animation completes
+    setTimeout(() => {
+        registrationMessage.remove();
+    }, 4000); // 4000 milliseconds = 4 seconds
 }
