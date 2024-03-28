@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function welcomeMessageShow(username) {
     const welcomeMessage = document.createElement("p");
-    welcomeMessage.textContent = "Welcome, " + username + "!";
+    welcomeMessage.textContent = "Welcome back, " + username + "!";
     welcomeMessage.classList.add("banner-message");
     welcomeMessage.classList.add("poppins-semibold");
     document.body.insertBefore(welcomeMessage, document.body.firstChild);
@@ -93,7 +93,7 @@ function updateSeedCounter() {
 function welCheck() {
     let welcomeMessageDisplayed = localStorage.getItem("welcomeMessageDisplayed");
     let username = localStorage.getItem("username");
-    if (!welcomeMessageDisplayed && username) {
+    if (!welcomeMessageDisplayed && username && registrationMessageDisplayed) {
         setTimeout(() => {
             welcomeMessageShow(username);
         }, 500);
