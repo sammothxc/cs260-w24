@@ -86,4 +86,4 @@ For this deliverable I built the structure of my application using HTML
 - [X] 20% - Supports existing user authentication
 - [X] 20% - Stores application data in MongoDB
 - [X] 20% - Stores and retrieves credentials in MongoDB
-- [ ] 20% - Restricts application functionality based upon authentication
+- [ ] 20% - Restricts application functionality based upon authentication- users can't donate seeds or view account info without logging in
