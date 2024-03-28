@@ -113,6 +113,6 @@ function msgBanner(msg, error = false) {
     if(error) { msgB.classList.add("error-message"); }
     document.body.insertBefore(msgB, document.body.firstChild);
     setTimeout(() => {
-        welcomeMessage.remove();
+        msgB.remove();
     }, 4000); // 4000 milliseconds = 4 seconds
 }
