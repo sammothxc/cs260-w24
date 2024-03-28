@@ -87,6 +87,7 @@ function updateSeedCounter() {
 
 function welCheck() {
     let welcomeMessageDisplayed = localStorage.getItem("welcomeMessageDisplayed");
+    let username = localStorage.getItem("username");
     if (!welcomeMessageDisplayed && username) {
         setTimeout(() => {
             welcomeMessageShow(username);

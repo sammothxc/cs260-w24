@@ -113,22 +113,25 @@ async function login(endpoint) {
             'Content-type': 'application/json; charset=UTF-8',
         },
     });
+    console.log(`chk 1`);
     if (response.ok) {
         localStorage.setItem('username', username);
+        console.log(`chk 2`);
         window.location.href = 'index.html';
     } else {
+        const body = await response.json();
         errorMsgIncorrect();
     }
 }
 
-// async function getUser(email) {
-//     // See if we have a user with the given email.
-//     const response = await fetch(`/api/user/${email}`);
-//     if (response.status === 200) {
-//         return response.json();
-//     }
-//     return null;
-// }
+async function getUser(username) {
+    // See if we have a user with the given email.
+    const response = await fetch(`/api/user/${username}`);
+    if (response.status === 200) {
+        return response.json();
+    }
+    return null;
+}
 
 function logout() {
     localStorage.removeItem('username');

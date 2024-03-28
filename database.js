@@ -19,22 +19,22 @@ const userCollection = db.collection('userInfo');
     process.exit(1);
 });
 
-function getUser(userName) {
-    return userCollection.findOne({ userName: userName });
+function getUser(username) {
+    return userCollection.findOne({ username: username });
 }
 
 function getUserByToken(token) {
     return userCollection.findOne({ token: token });
 }
 
-async function createUser(fullName, email, city, userName, password) {
+async function createUser(fullname, email, city, username, password) {
     // Hash the password before we insert it into the database
     const passwordHash = await bcrypt.hash(password, 10);
     const user = {
-        fullName: fullName,
+        fullname: fullname,
         email: email,
         city: city,
-        userName: userName,
+        username: username,
         password: passwordHash,
         token: uuid.v4(),
     };
@@ -46,6 +46,6 @@ module.exports = {
     getUser,
     getUserByToken,
     createUser,
-    addScore,
-    getHighScores,
+    // addScore,
+    // getHighScores,
 };
