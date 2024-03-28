@@ -115,7 +115,7 @@ async function login(endpoint) {
     });
     console.log(`chk 1`);
     if (response.ok) {
-        localStorage.setItem('username', username);
+        localStorage.setItem("username", username);
         console.log(`chk 2`);
         window.location.href = 'index.html';
     } else {
@@ -134,7 +134,7 @@ async function getUser(username) {
 }
 
 function logout() {
-    localStorage.removeItem('username');
+    localStorage.removeItem("username");
     localStorage.removeItem("welcomeMessageDisplayed");
     fetch(`/api/auth/logout`, {
         method: 'delete',
