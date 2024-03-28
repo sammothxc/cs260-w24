@@ -1,8 +1,8 @@
-const express = require('express');
-const bcrypt = require('bcrypt');
 const cookieParser = require('cookie-parser');
-const DB = require('./database.js');
+const bcrypt = require('bcrypt');
+const express = require('express');
 const app = express();
+const DB = require('./database.js');
 
 const authCookieName = 'token';
 
@@ -41,14 +41,6 @@ apiRouter.post('/auth/login', async (req, res) => {
         }
     }
     res.status(401).send({ msg: 'Unauthorized' });
-});
-
-app.use((_req, res) => {
-    res.sendFile('index.html', { root: 'public' });
-});
-  
-app.listen(port, () => {
-    console.log(`Listening on port ${port}`);
 });
 
 apiRouter.delete('/auth/logout', (_req, res) => {
@@ -90,3 +82,11 @@ function setAuthCookie(res, authToken) {
         sameSite: 'strict',
     });
 }
+
+app.use((_req, res) => {
+    res.sendFile('index.html', { root: 'public' });
+});
+  
+app.listen(port, () => {
+    console.log(`Listening on port ${port}`);
+});
