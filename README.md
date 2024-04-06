@@ -87,3 +87,14 @@ For this deliverable I built the structure of my application using HTML
 - [X] 20% - Stores application data in MongoDB
 - [X] 20% - Stores and retrieves credentials in MongoDB- clicking on the users name will take you to a page with their account info
 - [X] 20% - Restricts application functionality based upon authentication- users can't donate seeds or view account info without logging in
+
+## WebSocket Deliverable
+- [ ] Prerequisite: Simon WebSocket deployed to your production environment
+- [X] Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
+- [X] Prerequisite: Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the voter app as an example.
+- [X] Prerequisite: At least 10 git commits spread consistently throughout the assignment period.
+- [X] WebSocket support for data pushed from the backend
+- [ ] 20% - Backend listens for WebSocket connection
+- [ ] 20% - Frontend makes WebSocket connection
+- [ ] 30% - Data sent over WebSocket connection
+- [ ] 30% - WebSocket data displayed in the application interface
