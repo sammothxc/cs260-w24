@@ -89,7 +89,7 @@ For this deliverable I built the structure of my application using HTML
 - [X] 20% - Restricts application functionality based upon authentication- users can't donate seeds or view account info without logging in
 
 ## WebSocket Deliverable
-- [ ] Prerequisite: Simon WebSocket deployed to your production environment
+- [X] Prerequisite: Simon WebSocket deployed to your production environment
 - [X] Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
 - [X] Prerequisite: Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the voter app as an example.
 - [X] Prerequisite: At least 10 git commits spread consistently throughout the assignment period.
@@ -100,7 +100,7 @@ For this deliverable I built the structure of my application using HTML
 - [ ] 30% - WebSocket data displayed in the application interface
 
 ## React Deliverable
-- [ ] Prerequisite: Simon React deployed to your production environment
+- [X] Prerequisite: Simon React deployed to your production environment
 - [X] Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
 - [X] Prerequisite: Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the voter app as an example.
 - [X] Prerequisite: At least 10 git commits spread consistently throughout the assignment period.
