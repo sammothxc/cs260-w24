@@ -41,6 +41,7 @@ bash -i
 cd services/${service}
 npm install
 pm2 restart ${service}
+pm2 restart chatserver.js
 ENDSSH
 
 # Step 5
