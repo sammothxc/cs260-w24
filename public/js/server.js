@@ -20,6 +20,6 @@ wss.on('connection', (ws) => {
     });
 });
 
-server.listen(3000, () => {
+server.listen(5000, () => {
     console.log('WebSocket server is running on port 3000');
 });
