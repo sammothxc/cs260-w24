@@ -94,10 +94,10 @@ For this deliverable I built the structure of my application using HTML
 - [X] Prerequisite: Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the voter app as an example.
 - [X] Prerequisite: At least 10 git commits spread consistently throughout the assignment period.
 - [X] WebSocket support for data pushed from the backend
-- [ ] 20% - Backend listens for WebSocket connection
-- [ ] 20% - Frontend makes WebSocket connection
-- [ ] 30% - Data sent over WebSocket connection
-- [ ] 30% - WebSocket data displayed in the application interface
+- [X] 20% - Backend listens for WebSocket connection- websocket is set up to listen for connections in index.js
+- [X] 20% - Frontend makes WebSocket connection- websocket is set up to connect to backend each page's respective .js file
+- [X] 30% - Data sent over WebSocket connection- connected clients are counted and the variable clientCount is sent over the websocket connection so everyone can see how many people are currently on the site
+- [X] 30% - WebSocket data displayed in the application interface- clientCount is displayed on each page in the footer
 
 ## React Deliverable
 - [X] Prerequisite: Simon React deployed to your production environment
