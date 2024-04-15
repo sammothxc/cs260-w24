@@ -138,3 +138,10 @@ function errorMsgEmpty() {
         errorMessage.remove();
     }, 4000);
 }
+
+ws.onmessage = function(event) {
+    const data = JSON.parse(event.data);
+    if (data.type === 'userCount') {
+        document.getElementById('user-count').textContent = `Users Online: ${data.count}`;
+    }
+};
