@@ -116,3 +116,10 @@ function msgBanner(msg, error = false) {
         msgB.remove();
     }, 4000); // 4000 milliseconds = 4 seconds
 }
+
+ws.onmessage = function(event) {
+    const data = JSON.parse(event.data);
+    if (data.type === 'userCount') {
+        document.getElementById('user-count').textContent = `Users Online: ${data.count}`;
+    }
+};

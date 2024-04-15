@@ -3,11 +3,12 @@ const bcrypt = require('bcrypt');
 const express = require('express');
 const app = express();
 const DB = require('./database.js');
-
+const WebSocket = require('ws');
 const authCookieName = 'token';
 
-
+const wss = new WebSocket.Server({ port: 8080 });
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
+let clientCount = 0;
 
 app.use(express.json());
 app.use(express.static('public'));
@@ -144,4 +145,22 @@ apiRouter.delete('/del/:username', async (req, res) => {
         res.status(500).send({ msg: 'Internal server error' });
         return 1;
     }
+});
+
+wss.on('connection', function connection(ws) {
+    clientCount++;
+    wss.clients.forEach(function each(client) {
+        if (client.readyState === WebSocket.OPEN) {
+            client.send(JSON.stringify({ type: 'userCount', count: clientCount }));
+        }
+    });
+  
+    ws.on('close', function() {
+        clientCount--;
+        wss.clients.forEach(function each(client) {
+            if (client.readyState === WebSocket.OPEN) {
+                client.send(JSON.stringify({ type: 'userCount', count: clientCount }));
+            }
+        });
+    });
 });
