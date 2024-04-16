@@ -21,12 +21,9 @@ function peerProxy(httpServer) {
         clientCount++;
         const connection = { id: uuid.v4(), alive: true, ws: ws };
         connections.push(connection);
-        // wss.clients.forEach(function each(client) {
-        //     if (client.readyState === WebSocket.OPEN) {
-        //         client.send(JSON.stringify({ type: 'userCount', count: clientCount }));
-        //     }
-        // });
-
+        connections.forEach((c) => {
+            c.ws.send(JSON.stringify({ type: 'userCount', count: clientCount }));
+        });
         // Forward messages to everyone except the sender
         ws.on('message', function message(data) {
             connections.forEach((c) => {
@@ -39,16 +36,14 @@ function peerProxy(httpServer) {
         // Remove the closed connection so we don't try to forward anymore
         ws.on('close', () => {
             clientCount--;
-            // wss.clients.forEach(function each(client) {
-            //     if (client.readyState === WebSocket.OPEN) {
-            //         client.send(JSON.stringify({ type: 'userCount', count: clientCount }));
-            //     }
-            // });
             const pos = connections.findIndex((o, i) => o.id === connection.id);
 
             if (pos >= 0) {
                 connections.splice(pos, 1);
             }
+            connections.forEach((c) => {
+                c.ws.send(JSON.stringify({ type: 'userCount', count: clientCount }));
+            });
         });
 
         // Respond to pong messages by marking the connection alive
