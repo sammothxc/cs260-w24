@@ -150,22 +150,3 @@ const httpService = app.listen(port, () => {
     console.log(`Listening on port ${port}`);
 });
 peerProxy(httpService);
-  
-
-wss.on('connection', function connection(ws) {
-    clientCount++;
-    wss.clients.forEach(function each(client) {
-        if (client.readyState === WebSocket.OPEN) {
-            client.send(JSON.stringify({ type: 'userCount', count: clientCount }));
-        }
-    });
-  
-    ws.on('close', function() {
-        clientCount--;
-        wss.clients.forEach(function each(client) {
-            if (client.readyState === WebSocket.OPEN) {
-                client.send(JSON.stringify({ type: 'userCount', count: clientCount }));
-            }
-        });
-    });
-});
