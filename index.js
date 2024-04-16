@@ -8,7 +8,6 @@ const authCookieName = 'token';
 const { peerProxy } = require('./peerProxy.js');
 
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
-let clientCount = 0;
 
 app.use(express.json());
 app.use(express.static('public'));
