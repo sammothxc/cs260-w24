@@ -3,7 +3,6 @@ const bcrypt = require('bcrypt');
 const express = require('express');
 const app = express();
 const DB = require('./database.js');
-const WebSocket = require('ws');
 const authCookieName = 'token';
 const { peerProxy } = require('./peerProxy.js');
 
@@ -146,7 +145,7 @@ apiRouter.delete('/del/:username', async (req, res) => {
     }
 });
 
-const httpService = app.listen(port, () => {
-    console.log(`Listening on port ${port}`);
-});
-peerProxy(httpService);
+// const httpService = app.listen(port, () => {
+//     console.log(`Listening on port ${port}`);
+// });
+// peerProxy(httpService);
