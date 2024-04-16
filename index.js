@@ -155,7 +155,7 @@ wss.on('connection', function connection(ws) {
         }
     });
   
-    wss.on('close', function() {
+    ws.on('close', function() {
         clientCount--;
         wss.clients.forEach(function each(client) {
             if (client.readyState === WebSocket.OPEN) {
