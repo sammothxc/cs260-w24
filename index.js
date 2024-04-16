@@ -13,7 +13,7 @@ app.use(express.static('public'));
 app.use(cookieParser());
 app.set('trust proxy', true);
 
-var apiRouter = express.Router();
+const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
 apiRouter.post('/auth/create', async (req, res) => {
@@ -105,9 +105,9 @@ app.use((_req, res) => {
     res.sendFile('index.html', { root: 'public' });
 });
   
-app.listen(port, () => {
-    console.log(`Listening on port ${port}`);
-});
+// app.listen(port, () => {
+//     console.log(`Listening on port ${port}`);
+// });
 
 // apiRouter.post('/del/:username', async (req, res) => {
 //     const user = await DB.getUser(req.body.username);
@@ -145,7 +145,7 @@ apiRouter.delete('/del/:username', async (req, res) => {
     }
 });
 
-// const httpService = app.listen(port, () => {
-//     console.log(`Listening on port ${port}`);
-// });
-// peerProxy(httpService);
+const httpService = app.listen(port, () => {
+    console.log(`Listening on port ${port}`);
+});
+peerProxy(httpService);
