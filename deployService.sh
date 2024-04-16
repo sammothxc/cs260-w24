@@ -38,6 +38,7 @@ scp -r -i "$key" dist/* ubuntu@$hostname:services/$service
 printf "\n----> Deploy the service on the target\n"
 ssh -i "$key" ubuntu@$hostname << ENDSSH
 bash -i
+uptime
 cd services/${service}
 npm install
 pm2 restart ${service}
