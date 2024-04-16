@@ -21,11 +21,3 @@ simon.rootrevolution.store {
    header -etag
    header Access-Control-Allow-Origin *
 }
-
-chat.rootrevolution.store {
-   reverse_proxy * localhost:5000
-   header Cache-Control no-store
-   header -server
-   header -etag
-   header Access-Control-Allow-Origin *
-}
