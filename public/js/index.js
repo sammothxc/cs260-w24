@@ -126,7 +126,8 @@ function registrationMessageShow() {
     }, 4000); // 4000 milliseconds = 4 seconds
 }
 
-const ws = new WebSocket('ws://localhost:8080');
+const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+const ws = new WebSocket(`${protocol}://${window.location.host}/ws`);
 ws.onmessage = function(event) {
     const data = JSON.parse(event.data);
     if (data.type === 'userCount') {

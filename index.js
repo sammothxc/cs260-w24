@@ -5,8 +5,8 @@ const app = express();
 const DB = require('./database.js');
 const WebSocket = require('ws');
 const authCookieName = 'token';
+const { peerProxy } = require('./peerProxy.js');
 
-const wss = new WebSocket.Server({ port: 8080 });
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
 let clientCount = 0;
 
@@ -146,6 +146,12 @@ apiRouter.delete('/del/:username', async (req, res) => {
         return 1;
     }
 });
+
+const httpService = app.listen(port, () => {
+    console.log(`Listening on port ${port}`);
+});
+peerProxy(httpService);
+  
 
 wss.on('connection', function connection(ws) {
     clientCount++;
