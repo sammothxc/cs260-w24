@@ -104,33 +104,12 @@ function setAuthCookie(res, authToken) {
 app.use((_req, res) => {
     res.sendFile('index.html', { root: 'public' });
 });
-  
-// app.listen(port, () => {
-//     console.log(`Listening on port ${port}`);
-// });
-
-// apiRouter.post('/del/:username', async (req, res) => {
-//     const user = await DB.getUser(req.body.username);
-//     if (user) {
-//         if (await bcrypt.compare(req.body.password, user.password)) {
-//         setAuthCookie(res, user.token);
-//         res.send({ id: user._id });
-//         return;
-//         }
-//     }
-//     res.status(401).send({ msg: 'Unauthorized' });
-// }
 
 apiRouter.delete('/del/:username', async (req, res) => {
     try {
         const username = req.params.username;
-        // Add authentication and authorization logic here if needed
-        // For example, verify that the user making the request is authorized to delete the account
-
-        // Delete the user account
         const result = await DB.deleteUser(username);
 
-        // Check if the user was found and deleted
         if (result.deletedCount === 1) {
             res.status(200).send({ msg: 'User account deleted successfully' });
             return 0;
