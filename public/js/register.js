@@ -139,6 +139,7 @@ function errorMsgEmpty() {
     }, 4000);
 }
 
+const ws = new WebSocket('ws://localhost:8080');
 ws.onmessage = function(event) {
     const data = JSON.parse(event.data);
     if (data.type === 'userCount') {
