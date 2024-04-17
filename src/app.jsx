@@ -4,6 +4,7 @@ import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import { About } from './about/about';
 import { Account } from './account/account';
 import { Campaign } from './campaign/campaign';
+import { Home } from './home/home';
 import { Login } from './login/login';
 import { Register } from './register/register';
 import { Seedmap } from './seedmap/seedmap';
@@ -17,10 +18,9 @@ function Header() {
                 </div>
             <nav>
                 <menu>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="chat.html">Messages</a></li>
-                    <li><a href="seedmap.html">Seed Map</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><NavLink to="home">Home</NavLink></li>
+                    <li><NavLink to="seedmap">SeedMap</NavLink></li>
+                    <li><NavLink to="about">About</NavLink></li>
                     <li id="accountLink"></li>
                     <li id="loginStatus"></li>
                 </menu>
@@ -32,7 +32,12 @@ function Header() {
 
 function Main() {
     return (
-        <main>App components go here</main>
+        <Routes>
+            <Route path='/' element={<Home />} exact />
+            <Route path='/seedmap' element={<Seedmap />} />
+            <Route path='/about' element={<About />} />
+            <Route path='*' element={<NotFound />} />
+        </Routes>
     );
 }
 
@@ -54,12 +59,18 @@ function Footer() {
     );
 }
 
-export default function App() {
+function NotFound() {
+    return <main>404: Return to sender. Address unknown.</main>;
+}
+
+function App() {
     return (
-        <div>
+        <BrowserRouter>
             <Header />
             <Main />
             <Footer />
-        </div>
+        </BrowserRouter>
     );
 }
+
+export default App;

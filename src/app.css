@@ -213,24 +213,6 @@ footer a:hover {
     text-decoration: none;
 }
 
-main ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
-    grid-gap: 1rem;
-}
-
-main ul li {
-    border: 3px solid #005512;
-    border-radius: 8px;
-    padding: 1.5rem;
-    background-color: #f9f9f9;
-}
-
-main ul li img {
-    width: 100%;
-    border-radius: 8px;
-}
-
 /* Font styles */
 .poppins-thin {
     font-family: "Poppins", sans-serif;
