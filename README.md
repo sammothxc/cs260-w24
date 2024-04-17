@@ -105,7 +105,7 @@ For this deliverable I built the structure of my application using HTML
 - [X] Prerequisite: Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the voter app as an example.
 - [X] Prerequisite: At least 10 git commits spread consistently throughout the assignment period.
 - [X] Application converted to use React
-- [ ] 10% Bundled using Vite
-- [ ] 30% Multiple functional react components
-- [ ] 30% React router
+- [X] 10% Bundled using Vite
+- [X] 30% Multiple functional react components
+- [X] 30% React router
 - [ ] 30% React hooks

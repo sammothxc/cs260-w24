@@ -1,4 +1,5 @@
 import React from 'react';
+import './seedmap.css';
 
 export function Seedmap() {
     return (
