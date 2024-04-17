@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Start Campaign - RootRevolution</title>
+        <link rel="icon" type="image/png" href="img/favicon.png" />
+        <link rel="stylesheet" href="css/common.css" />
+        <link rel="stylesheet" href="css/start-campaign.css" />
+        <script src="js/start-campaign.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <h1>RootRevolution<sup>&reg;</sup></h1>
+            <nav>
+                <menu>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="seedmap.html">Seed Map</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li id="accountLink"></li>
+                    <li id="loginStatus"></li>
+                </menu>
+            </nav>
+            <hr />
+        </header>
+
+        <main>
+            <h2>Start Campaign</h2>
+            <p>Start Your Campaign!</p>
+            <form method="get" action="index.html">
+                <label for="name">Campaign Name</label>
+                <input type="text" id="name" placeholder="Campaign here" />
+                <label for="description">Description</label>
+                <input type="text" id="description" placeholder="Description here" />
+                <label for="location">Location</label>
+                <input type="text" id="location" placeholder="Location here" />
+                <label for="seeds">Seeds</label>
+                <input type="text" id="seeds" placeholder="Seeds type here" />
+                <label for="goal">Goal</label>
+                <input type="text" id="goal" placeholder="Goal here" />
+                <button type="submit">Create</button>
+            </form> 
+        </main>
+
+        <footer>
+            <hr />
+            <div class="content">
+                <div class="footer-left">
+                    <p>Sam Warr &copy;2024</p>
+                    <p>Source: <a href="https://github.com/sammothxc/startup">GitHub</a></p>
+                </div>
+                <div class="footer-right poppins-semibold">
+                    <span id="seedCounter">Seeds Donated Since 2024: Counting...</span>
+                    <p id="user-count">Loading...</p>
+                </div>
+            </div>
+        </footer>
+  </body>
+</html>
