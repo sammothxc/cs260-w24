@@ -1,5 +1,13 @@
 import React from 'react';
 import './app.css';
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import { About } from './about/about';
+import { Account } from './account/account';
+import { Campaign } from './campaign/campaign';
+import { Login } from './login/login';
+import { Register } from './register/register';
+import { Seedmap } from './seedmap/seedmap';
+import { StartCampaign } from './start-campaign/start-campaign';
 
 function Header() {
     return (
