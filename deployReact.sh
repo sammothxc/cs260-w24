@@ -44,6 +44,7 @@ bash -i
 cd services/${service}
 npm install
 pm2 restart ${service}
+uptime
 ENDSSH
 
 # Step 5
