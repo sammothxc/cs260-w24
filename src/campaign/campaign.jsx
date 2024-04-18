@@ -1,12 +1,11 @@
 import React from 'react';
-import './campaign.css';
 
 export function Campaign() {
     return (
-        <main>
+        <main className='campaign'>
             <h1>&lt;campaign name&gt;</h1>
             <h5>&lt;username&gt; in &lt;city, zip&gt;</h5>
-            <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="100%"/>
+            <img src="/placeholder-campaign.jpg" alt="Campaign Picture"/>
             <h3>&lt;campaign description&gt;</h3>
             <p>Seeds Requesting</p>
             <table>
