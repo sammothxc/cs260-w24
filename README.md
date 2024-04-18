@@ -108,4 +108,4 @@ For this deliverable I built the structure of my application using HTML
 - [X] 10% Bundled using Vite
 - [X] 30% Multiple functional react components
 - [X] 30% React router
-- [ ] 30% React hooks
+- [X] 30% React hooks- used useNavigate to navigate without reloading and useEffect to run things only once on page load
