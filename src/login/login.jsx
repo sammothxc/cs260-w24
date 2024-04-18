@@ -8,8 +8,8 @@ export function Login() {
             <h1>Login</h1>
             <p>Login or register to donate and save your campaigns!</p>
             <div id="login" className="input-box">
-                <input type="text" id="username" placeholder="Username" />
-                <input type="password" id="password" placeholder="Password" />
+                <input type="text" autocomplete="on" id="username" placeholder="Username" />
+                <input type="password" autocomplete="on" id="password" placeholder="Password" />
                 <button className="poppins-semibold" onClick={() => loginUser()}>Login</button>
             </div>
             <br />

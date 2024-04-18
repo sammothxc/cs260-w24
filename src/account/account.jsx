@@ -1,8 +1,105 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export function Account() {
     const navigate = useNavigate();
+    useEffect(() => {
+        showUserInfo();
+        return () => {
+        };
+    }, []);
+
+    function showUserInfo() {
+        const uinfoText = localStorage.getItem('uinfo');
+        uinfo = JSON.parse(uinfoText);
+    
+        const usernameElement = document.getElementById("username");
+        const memberSinceElement = document.getElementById("member-since");
+        const nameElement = document.getElementById("fullname");
+        const emailElement = document.getElementById("email");
+        const locationElement = document.getElementById("location");
+        const seedsDonatedElement = document.getElementById("seeds-donated");
+        const seedsReceivedElement = document.getElementById("seeds-received");
+    
+        const usernametxt = document.createElement("p");
+        const memberSincetxt = document.createElement("p");
+        const nametxt = document.createElement("p");
+        const emailtxt = document.createElement("p");
+        const locationtxt = document.createElement("p");
+        const seedsDonatedtxt = document.createElement("p");
+        const seedsReceivedtxt = document.createElement("p");
+    
+        usernameElement.textContent = username;
+        memberSinceElement.textContent = "Member Since: " + membersince;
+        nameElement.textContent = "Name: " + fullname;
+        emailElement.textContent = "Email: " + email;
+        locationElement.textContent = "Location: " + location;
+        seedsDonatedElement.textContent = "Seeds Donated: " + seedsdonated;
+        seedsReceivedElement.textContent = "Seeds Received: " + seedsreceived;
+    
+        usernameElement.appendChild(usernametxt);
+        memberSinceElement.appendChild(memberSincetxt);
+        nameElement.appendChild(nametxt);
+        emailElement.appendChild(emailtxt);
+        locationElement.appendChild(locationtxt);
+        seedsDonatedElement.appendChild(seedsDonatedtxt);
+        seedsReceivedElement.appendChild(seedsReceivedtxt);
+    }
+    
+    async function deleteAccount() {
+        let attemptedDelete = localStorage.getItem("attemptedDelete");
+        if (!attemptedDelete) {
+            localStorage.setItem("attemptedDelete", 1);
+            msgBanner('Are you sure you want to delete your account? Click the delete button 3 times to confirm.', true);
+            return;
+        } else {
+            if (parseInt(attemptedDelete) <= 2) {
+                localStorage.setItem("attemptedDelete", parseInt(attemptedDelete) + 1);
+                return;
+            } else {
+                try {
+                    const username = localStorage.getItem("username");
+                    const response = await deleteUser(username);
+                    console.log(response);
+                    if (response === 200) {
+                        // Account deletion successful
+                        localStorage.clear();
+                        navigate('/'); // Redirect to the homepage or login page
+                    } else {
+                        // Handle error response
+                        console.error('Error deleting account:' + response);
+                        msgBanner('Error deleting account', true);
+                        // Display an error message to the user if necessary
+                    }
+                } catch (error) {
+                    console.error('Error deleting account:', error.message);
+                    msgBanner('Error deleting account', true);
+                    // Display an error message to the user if necessary
+                }
+            }
+        }
+    }
+    
+    function msgBanner(msg, error = false) {
+        const msgB = document.createElement("p");
+        msgB.textContent = msg;
+        msgB.classList.add("banner-message");
+        msgB.classList.add("poppins-semibold");
+        if(error) { msgB.classList.add("error-message"); }
+        document.body.insertBefore(msgB, document.body.firstChild);
+        setTimeout(() => {
+            msgB.remove();
+        }, 4000); // 4000 milliseconds = 4 seconds
+    }
+    
+    async function deleteUser(username) {
+        const response = await fetch(`/api/del/${username}`, {
+            method: 'DELETE',
+        });
+        return response.status;
+    }
+
     return (
         <main className='account'>
             <h1>Your Account</h1>
@@ -42,152 +139,4 @@ export function Account() {
             <button className="delete-account-btn" onClick={() => deleteAccount()}>Delete Account</button>
          </main>
     );
-}
-
-localStorage.removeItem("attemptedDelete");
-async function loadUserInfo() {
-    try {
-        // Get the uinfo from the service
-        const response = await fetch('/api/uinfo');
-        const uinfo = await response.json();
-
-        const {
-            fullname,
-            email,
-            location,
-            username,
-            membersince,
-            seedsdonated,
-            seedsreceived
-        } = uinfo;
-
-        // Save the uinfo in case we go offline in the future
-        localStorage.setItem('uinfo', JSON.stringify(uinfo));
-        const usernameElement = document.getElementById("username");
-        const memberSinceElement = document.getElementById("member-since");
-        const nameElement = document.getElementById("fullname");
-        const emailElement = document.getElementById("email");
-        const locationElement = document.getElementById("location");
-        const seedsDonatedElement = document.getElementById("seeds-donated");
-        const seedsReceivedElement = document.getElementById("seeds-received");
-
-        const usernametxt = document.createElement("p");
-        const memberSincetxt = document.createElement("p");
-        const nametxt = document.createElement("p");
-        const emailtxt = document.createElement("p");
-        const locationtxt = document.createElement("p");
-        const seedsDonatedtxt = document.createElement("p");
-        const seedsReceivedtxt = document.createElement("p");
-
-        usernameElement.textContent = username;
-        memberSinceElement.textContent = "Member Since: " + membersince;
-        nameElement.textContent = "Name: " + fullname;
-        emailElement.textContent = "Email: " + email;
-        locationElement.textContent = "Location: " + location;
-        seedsDonatedElement.textContent = "Seeds Donated: " + seedsdonated;
-        seedsReceivedElement.textContent = "Seeds Received: " + seedsreceived;
-
-        usernameElement.appendChild(usernametxt);
-        memberSinceElement.appendChild(memberSincetxt);
-        nameElement.appendChild(nametxt);
-        emailElement.appendChild(emailtxt);
-        locationElement.appendChild(locationtxt);
-        seedsDonatedElement.appendChild(seedsDonatedtxt);
-        seedsReceivedElement.appendChild(seedsReceivedtxt);
-
-    } catch {
-        // If there was an error then just use the last saved uinfo
-        const uinfoText = localStorage.getItem('uinfo');
-        if (uinfoText) {
-            uinfo = JSON.parse(uinfoText);
-        }
-        localStorage.setItem('uinfo', JSON.stringify(uinfo));
-        const usernameElement = document.getElementById("username");
-        const memberSinceElement = document.getElementById("member-since");
-        const nameElement = document.getElementById("fullname");
-        const emailElement = document.getElementById("email");
-        const locationElement = document.getElementById("location");
-        const seedsDonatedElement = document.getElementById("seeds-donated");
-        const seedsReceivedElement = document.getElementById("seeds-received");
-
-        const usernametxt = document.createElement("p");
-        const memberSincetxt = document.createElement("p");
-        const nametxt = document.createElement("p");
-        const emailtxt = document.createElement("p");
-        const locationtxt = document.createElement("p");
-        const seedsDonatedtxt = document.createElement("p");
-        const seedsReceivedtxt = document.createElement("p");
-
-        usernameElement.textContent = username;
-        memberSinceElement.textContent = "Member Since: " + membersince;
-        nameElement.textContent = "Name: " + fullname;
-        emailElement.textContent = "Email: " + email;
-        locationElement.textContent = "Location: " + location;
-        seedsDonatedElement.textContent = "Seeds Donated: " + seedsdonated;
-        seedsReceivedElement.textContent = "Seeds Received: " + seedsreceived;
-
-        usernameElement.appendChild(usernametxt);
-        memberSinceElement.appendChild(memberSincetxt);
-        nameElement.appendChild(nametxt);
-        emailElement.appendChild(emailtxt);
-        locationElement.appendChild(locationtxt);
-        seedsDonatedElement.appendChild(seedsDonatedtxt);
-        seedsReceivedElement.appendChild(seedsReceivedtxt);
-    }
-}
-
-loadUserInfo()
-
-async function deleteAccount() {
-    let attemptedDelete = localStorage.getItem("attemptedDelete");
-    if (!attemptedDelete) {
-        localStorage.setItem("attemptedDelete", 1);
-        msgBanner('Are you sure you want to delete your account? Click the delete button 3 times to confirm.', true);
-        return;
-    } else {
-        if (parseInt(attemptedDelete) <= 2) {
-            localStorage.setItem("attemptedDelete", parseInt(attemptedDelete) + 1);
-            return;
-        } else {
-            try {
-                const username = localStorage.getItem("username");
-                const response = await deleteUser(username);
-                console.log(response);
-                if (response === 200) {
-                    // Account deletion successful
-                    //localStorage.removeItem("username");
-                    localStorage.clear();
-                    navigate('/'); // Redirect to the homepage or login page
-                } else {
-                    // Handle error response
-                    console.error('Error deleting account:' + response);
-                    msgBanner('Error deleting account', true);
-                    // Display an error message to the user if necessary
-                }
-            } catch (error) {
-                console.error('Error deleting account:', error.message);
-                msgBanner('Error deleting account', true);
-                // Display an error message to the user if necessary
-            }
-        }
-    }
-}
-
-function msgBanner(msg, error = false) {
-    const msgB = document.createElement("p");
-    msgB.textContent = msg;
-    msgB.classList.add("banner-message");
-    msgB.classList.add("poppins-semibold");
-    if(error) { msgB.classList.add("error-message"); }
-    document.body.insertBefore(msgB, document.body.firstChild);
-    setTimeout(() => {
-        msgB.remove();
-    }, 4000); // 4000 milliseconds = 4 seconds
-}
-
-async function deleteUser(username) {
-    const response = await fetch(`/api/del/${username}`, {
-        method: 'DELETE',
-    });
-    return response.status;
 }
