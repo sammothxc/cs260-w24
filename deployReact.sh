@@ -24,7 +24,6 @@ npm run build # build the React front end
 cp -rf dist build/public # move the React front end to the target distribution
 cp service/*.js build # move the back end service to the target distribution
 cp service/*.json build
-cp service/dbConfig.json
 
 # Step 2
 printf "\n----> Clearing out previous distribution on the target\n"
@@ -44,6 +43,7 @@ bash -i
 cd services/${service}
 npm install
 pm2 restart ${service}
+uptime
 ENDSSH
 
 # Step 5

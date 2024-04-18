@@ -1,12 +1,17 @@
 import React from 'react';
-import './about.css';
+import { useEffect } from 'react';
 
 export function About() {
+    useEffect(() => {
+        displayQuote();
+        return () => {
+        };
+    }, []);
     return (
         <main>
             <h1>About RootRevolution</h1>
             <div id="about" className="content-box">
-                <img className="visual" src="/placeholder-about.jpg" alt="About Picture" width="100%"/>
+                <img src="/placeholder-about.jpg" alt="About Picture"/>
                 <div>
                     RootRevolution put simply is a seed crowdfunder- the farmer friendly 
                     fundraising website that the world has been waiting for. Inspired by 
@@ -39,9 +44,9 @@ function displayQuote(data) {
       .then((data) => {
         const containerEl = document.querySelector('#carbon');
   
-        const quoteEl = document.createElement('p');
+        const quoteEl = document.createElement('div');
         quoteEl.classList.add('quote');
-        const authorEl = document.createElement('p');
+        const authorEl = document.createElement('div');
         authorEl.classList.add('author');
   
         quoteEl.textContent = `"${data.content}"`;
@@ -50,8 +55,4 @@ function displayQuote(data) {
         containerEl.appendChild(quoteEl);
         containerEl.appendChild(authorEl);
     });
-}
-
-window.onload = () => {
-    displayQuote();
 }
