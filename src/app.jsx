@@ -113,7 +113,7 @@ function Footer() {
         currentCount += incrementAmount;
         // Update the counter display
         localStorage.setItem("seedCounter", currentCount);
-        seedCounterElement.textContent = currentCount + " Seeds Donated Since 2024!";
+        seedCounterElement.textContent = currentCount + " Seeds Donated!";
     }
 
     return (
