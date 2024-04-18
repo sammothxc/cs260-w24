@@ -10,10 +10,9 @@ export function Home() {
         regCheck();
         welCheck();
         return () => {
-            console.log('Component unmounted');
         };
     }, []);
-    
+
     return (
         <main>
             <h1>Your SeedFeed</h1>
