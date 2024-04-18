@@ -92,7 +92,7 @@ function menu() {
         // User is logged in, display username and logout button
         const logoutLink = document.createElement("a");
         logoutLink.textContent = "Logout";
-        logoutLink.href = "index";
+        logoutLink.href = "/";
         logoutLink.onclick = function(){
             localStorage.removeItem("username");
             localStorage.removeItem("welcomeMessageDisplayed");

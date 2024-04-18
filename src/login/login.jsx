@@ -72,7 +72,7 @@ async function login(endpoint) {
     if (response.ok) {
         localStorage.setItem("username", username);
         localStorage.setItem("registrationMessageDisplayed", "true");
-        window.location.href = 'index';
+        window.location.href = '/';
     } else {
         const body = await response.json();
         errorMsgIncorrect();
