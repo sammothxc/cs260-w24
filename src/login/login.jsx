@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './login.css';
 
 export function Login() {
+    const navigate = useNavigate();
     return (
         <main>
             <h1>Login</h1>
@@ -14,15 +16,12 @@ export function Login() {
             <br />
             <div id="register-btn" className="register poppins-semibold">
                 <p>Don't have an account?</p>
-                <button className="poppins-semibold" onClick={() => register()}>Register</button>
+                <button className="poppins-semibold" onClick={() => navigate('/register')}>Register</button>
             </div>
         </main>
     );
 }
 
-function register() {
-    window.location.href = "register";
-}
 
 function errorMsgEmpty() {
     const errorMessage = document.createElement("p");

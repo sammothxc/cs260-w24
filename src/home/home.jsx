@@ -1,7 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import './home.css';
 
 export function Home() {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        regCheck();
+        welCheck();
+        return () => {
+            console.log('Component unmounted');
+        };
+    }, []);
+    
     return (
         <main>
             <h1>Your SeedFeed</h1>
@@ -10,11 +22,27 @@ export function Home() {
                 <div id="local" className="grid">
                     <h3>Your Community in Provo</h3>
                     <ul>
+                        <div className='c-box'>
+                            <a>Neighborhood Veggie Garden</a>
+                            <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
+                            <button className="poppins-semibold" onClick={() => navigate('/campaign')}>View</button>
+                        </div>
+                        <div className='c-box'>
+                            <a>Carrot garden for Provo Elderly Care Center</a>
+                            <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
+                            <button className="poppins-semibold" onClick={() => navigate('/campaign')}>View</button>
+                        </div>
+                        <div className='c-box'>
+                            <a>Sarah's Planting Club</a>
+                            <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
+                            <button className="poppins-semibold" onClick={() => navigate('/campaign')}>View</button>
+                        </div>
+                        <div className='c-box'>
+                            <a>Foster Elementary 4th Grade Garden</a>
+                            <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
+                            <button className="poppins-semibold" onClick={() => navigate('/campaign')}>View</button>
+                        </div>
                         <li><a href="campaign">Neighborhood Veggie Garden</a></li>
-                        <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
-                        <li><a href="campaign">Carrot garden for Provo Elderly Care Center</a></li>
-                        <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
-                        <li><a href="campaign">Sarah's Planting Club</a></li>
                         <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
                     </ul>
                 </div>
@@ -61,16 +89,11 @@ export function Home() {
     );
 }
 
-window.onload = () => {
-    regCheck();
-    welCheck();
-}
-
 function welCheck() {
-    let welcomeMessageDisplayed = localStorage.getItem("welcomeMessageDisplayed");
-    let registered = localStorage.getItem("registered");
+    let welcomeMessageDisplayed = JSON.parse(localStorage.getItem("welcomeMessageDisplayed"));
+    let registered = JSON.parse(localStorage.getItem("registered"));
     let username = localStorage.getItem("username");
-    if (!welcomeMessageDisplayed && username && !registered) {
+    if (!welcomeMessageDisplayed && username && registered) {
         setTimeout(() => {
             welcomeMessageShow(username);
         }, 500);
@@ -78,12 +101,13 @@ function welCheck() {
 }
 
 function regCheck() {
-    const registrationMessageDisplayed = localStorage.getItem("registrationMessageDisplayed");
-    const registered = localStorage.getItem("registered");
+    const registrationMessageDisplayed = JSON.parse(localStorage.getItem("registrationMessageDisplayed"));
+    const registered = JSON.parse(localStorage.getItem("registered"));
     if (!registrationMessageDisplayed && registered) {
         setTimeout(() => {
             registrationMessageShow();
         }, 500);
+    } else {
     }
 }
 

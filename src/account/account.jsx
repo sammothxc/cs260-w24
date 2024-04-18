@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './account.css';
 
 export function Account() {
+    const navigate = useNavigate();
     return (
         <main>
             <h1>Your Account</h1>
@@ -15,7 +17,7 @@ export function Account() {
                     <p id="location"></p>
                     <p id="seeds-donated"></p>
                     <p id="seeds-received"></p>
-                    <button className="poppins-semibold" id="start-campaign" onClick={() => startCampaign()}>Start Campaign</button>
+                    <button className="poppins-semibold" id="start-campaign" onClick={() => navigate('/start-campaign')}>Start Campaign</button>
                 </div>
                 <div id="profile-pic" className="profile-picture">
                     <img src="img/placeholder-profile.jpg" className="img-container" alt="Profile Picture"/>
@@ -156,7 +158,7 @@ async function deleteAccount() {
                     // Account deletion successful
                     //localStorage.removeItem("username");
                     localStorage.clear();
-                    window.location.href = '/'; // Redirect to the homepage or login page
+                    navigate('/'); // Redirect to the homepage or login page
                 } else {
                     // Handle error response
                     console.error('Error deleting account:' + response);
@@ -189,8 +191,4 @@ async function deleteUser(username) {
         method: 'DELETE',
     });
     return response.status;
-}
-
-function startCampaign() {
-    window.location.href = "start-campaign";
 }

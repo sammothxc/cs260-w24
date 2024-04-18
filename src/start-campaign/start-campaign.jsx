@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; //implement
 import './start-campaign.css';
 
 export function StartCampaign() {
+    const navigate = useNavigate();
     return (
         <main>
             <h2>Start Campaign</h2>
@@ -17,12 +19,8 @@ export function StartCampaign() {
                 <input type="text" id="seeds" placeholder="Seeds type here" />
                 <label htmlFor="goal">Goal</label>
                 <input type="text" id="goal" placeholder="Goal here" />
-                <button className="poppins-semibold" onClick={() => create()}>Create</button>
+                <button className="poppins-semibold" onClick={() => navigate('/login')}>Create</button>
             </form>
         </main>
     );
-}
-
-function create() {
-    window.location.href = "login";
 }
