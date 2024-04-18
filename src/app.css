@@ -117,6 +117,10 @@ main h1 {
     margin-bottom: 1rem;
 }
 
+.p-login {
+    cursor: pointer;
+}
+
 /* Input styles */
 main input[type="text"],
 main input[type="password"] {

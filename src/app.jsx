@@ -48,7 +48,8 @@ function Main() {
             // User is logged in, display username and logout button
             const logoutLink = document.createElement("a");
             logoutLink.textContent = "Logout";
-            //logoutLink.href = "/";
+            logoutLink.classList.add("p-login");
+            loginStatusElement.appendChild(logoutLink);
             logoutLink.onclick = function(){
                 localStorage.removeItem("username");
                 localStorage.removeItem("welcomeMessageDisplayed");
@@ -56,19 +57,22 @@ function Main() {
                     method: 'delete',
                 }).then(() => (navigate('/')));
             };
-            logoutLink.classList.add("li");
-            loginStatusElement.appendChild(logoutLink);
             const userAccount = document.createElement("a");
             userAccount.textContent = username;
-            navigate('/account');
-            userAccount.classList.add("li");
+            userAccount.classList.add("p-login");
             accountLinkElement.appendChild(userAccount);
+            userAccount.onclick = function(){
+                navigate('/account');
+            };
         } else {
             // User is not logged in, display login link
             const loginLink = document.createElement("a");
-            navigate('/login');
             loginLink.textContent = "Login";
+            loginLink.classList.add("p-login");
             loginStatusElement.appendChild(loginLink);
+            loginLink.onclick = function(){
+                navigate('/login');
+            };
         }
     }
 
