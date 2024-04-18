@@ -1,17 +1,38 @@
-main ul {
+.grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
     grid-gap: 1rem;
+    margin-bottom: 3rem;
 }
 
-main ul li {
+.c-box {
     border: 3px solid #005512;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-radius: 8px;
     padding: 1.5rem;
+    margin-top: 1rem;
     background-color: #f9f9f9;
 }
 
-main ul li img {
-    width: 100%;
+.c-box img {
+    width: 70%;
     border-radius: 8px;
+}
+
+.c-box button {
+    background-color: #005512;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+}
+
+.c-box button:hover {
+    background-color: #00b600;
+}
+
+.c-box A {
+    color: #333;
 }
