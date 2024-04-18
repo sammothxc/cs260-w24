@@ -13,7 +13,7 @@
     border: 3px solid #023502;
     background-color: #d2fad2;
     border-radius: 12px;
-    max-width: 75%;
+    max-width: 85%;
 }
 
 .content-box img {
@@ -67,6 +67,12 @@ header h1 {
 .navbar-brand {
     font-size: 2em;
     font-weight: bold;
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure it's above other content */
 }
 
 /* Navigation styles */
@@ -164,7 +170,7 @@ main button:hover {
     border-radius: 8px;
     padding: 1rem;
     margin-top: 1rem;
-    background-color: #f9f9f9;
+    background-color: #defade;
     min-height: 19rem;
 }
 
@@ -367,6 +373,14 @@ footer {
 footer a {
     color: #fff;
     text-decoration: underline;
+}
+
+.sticky-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it's above other content */
 }
 
 @media only screen and (max-width: 900px) {

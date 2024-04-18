@@ -120,21 +120,23 @@ export function Account() {
                 </div> 
             </div>
             <br />
-            <div id="campaigns" className="grid content-box">
-                <h2>Campaigns Run:</h2>
-                <ul>
-                <li><a href="campaign.html">Campaign 1</a></li>
-                <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125"/>
-                <li><a href="campaign.html">Campaign 2</a></li>
-                <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125"/>
-                </ul>
-                <h2>Saved Campaigns:</h2>
-                <ul>
-                <li><a href="campaign.html">Campaign 3</a></li>
-                <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125"/>
-                <li><a href="campaign.html">Campaign 4</a></li>
-                <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125"/>
-                </ul>
+            <h2>Campaigns Run:</h2>
+            <div id="campaigns" className="grid">
+                <div className='c-box'>
+                        <div>Your 1st Campaign</div>
+                        <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
+                        <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
+                    </div>
+                    <div className='c-box'>
+                        <div>Your 2nd Campaign</div>
+                        <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
+                        <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
+                    </div>
+                    <div className='c-box'>
+                        <div>Your 3rd Campaign</div>
+                        <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
+                        <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
+                    </div>
             </div>
             <button className="delete-account-btn" onClick={() => deleteAccount()}>Delete Account</button>
          </main>

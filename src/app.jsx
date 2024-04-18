@@ -14,7 +14,7 @@ export default App;
 
 function Header() {
     return (
-        <header>
+        <header className="sticky-header">
             <div className='navbar-brand'>
                 RootRevolution<sup>&reg;</sup>
                 </div>
@@ -117,7 +117,7 @@ function Footer() {
     }
 
     return (
-        <footer>
+        <footer className="sticky-footer">
             <hr />
             <div className="content">
                 <div className="footer-left">
