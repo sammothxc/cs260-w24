@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import './home.css';
 
 export function Home() {
     const navigate = useNavigate();
@@ -22,22 +21,22 @@ export function Home() {
                 <hr className="seedfeed"/>
                 <div id="local" className="grid">
                     <div className='c-box'>
-                        <a>Neighborhood Veggie Garden</a>
+                        <div>Neighborhood Veggie Garden</div>
                         <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
                         <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
                     </div>
                     <div className='c-box'>
-                        <a>Carrot garden for Provo Elderly Care Center</a>
+                        <div>Carrot garden for Provo Elderly Care Center</div>
                         <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
                         <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
                     </div>
                     <div className='c-box'>
-                        <a>Sarah's Planting Club</a>
+                        <div>Sarah's Planting Club</div>
                         <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
                         <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
                     </div>
                     <div className='c-box'>
-                        <a>Foster Elementary 4th Grade Garden</a>
+                        <div>Foster Elementary 4th Grade Garden</div>
                         <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
                         <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
                     </div>
@@ -46,17 +45,17 @@ export function Home() {
                 <hr className="seedfeed"/>
                 <div id="saved" className="grid">
                     <div className='c-box'>
-                        <a>Saved Campaign 1</a>
+                        <div>Saved Campaign 1</div>
                         <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
                         <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
                     </div>
                     <div className='c-box'>
-                        <a>Saved Campaign 2</a>
+                        <div>Saved Campaign 2</div>
                         <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
                         <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
                     </div>
                     <div className='c-box'>
-                        <a>Saved Campaign 3</a>
+                        <div>Saved Campaign 3</div>
                         <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
                         <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
                     </div>
@@ -65,42 +64,42 @@ export function Home() {
                 <hr className="seedfeed"/>
                 <div id="seed-match" className="grid">
                     <div className='c-box'>
-                        <a>Neighborhood Veggie Garden</a>
+                        <div>Neighborhood Veggie Garden</div>
                         <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
                         <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
                     </div>
                     <div className='c-box'>
-                        <a>Carrot garden for Provo Elderly Care Center</a>
+                        <div>Carrot garden for Provo Elderly Care Center</div>
                         <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
                         <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
                     </div>
                     <div className='c-box'>
-                        <a>Sarah's Planting Club</a>
+                        <div>Sarah's Planting Club</div>
                         <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
                         <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
                     </div>
                     <div className='c-box'>
-                        <a>Foster Elementary 4th Grade Garden</a>
+                        <div>Foster Elementary 4th Grade Garden</div>
                         <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
                         <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
                     </div>
                     <div className='c-box'>
-                        <a>[Rose] 911 Rose seeds for 9/11 community memorial</a>
+                        <div>[Rose] 911 Rose seeds for 9/11 community memorial</div>
                         <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
                         <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
                     </div>
                     <div className='c-box'>
-                        <a>[Carrot] Carrot garden for Elderly Care Center</a>
+                        <div>[Carrot] Carrot garden for Elderly Care Center</div>
                         <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
                         <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
                     </div>
                     <div className='c-box'>
-                        <a>[Pepper] 50,000 Pepper seeds to feed Town after natural disaster</a>
+                        <div>[Pepper] 50,000 Pepper seeds to feed Town after natural disaster</div>
                         <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
                         <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
                     </div>
                     <div className='c-box'>
-                        <a>[Tomato] 1000 Tomato seeds for local Elementary School</a>
+                        <div>[Tomato] 1000 Tomato seeds for local Elementary School</div>
                         <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
                         <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
                     </div>
