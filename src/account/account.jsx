@@ -1,11 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './account.css';
 
 export function Account() {
     const navigate = useNavigate();
     return (
-        <main>
+        <main className='account'>
             <h1>Your Account</h1>
             <div id="account" className="content-box">
                 <div id="account-info" className="account-info">
@@ -20,7 +19,7 @@ export function Account() {
                     <button className="poppins-semibold" id="start-campaign" onClick={() => navigate('/start-campaign')}>Start Campaign</button>
                 </div>
                 <div id="profile-pic" className="profile-picture">
-                    <img src="img/placeholder-profile.jpg" className="img-container" alt="Profile Picture"/>
+                    <img src="/placeholder-profile.jpg" className="img-container" alt="Profile Picture"/>
                 </div> 
             </div>
             <br />
@@ -28,16 +27,16 @@ export function Account() {
                 <h2>Campaigns Run:</h2>
                 <ul>
                 <li><a href="campaign.html">Campaign 1</a></li>
-                <img src="img/placeholder-campaign.jpg" alt="Campaign Picture" width="125"/>
+                <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125"/>
                 <li><a href="campaign.html">Campaign 2</a></li>
-                <img src="img/placeholder-campaign.jpg" alt="Campaign Picture" width="125"/>
+                <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125"/>
                 </ul>
                 <h2>Saved Campaigns:</h2>
                 <ul>
                 <li><a href="campaign.html">Campaign 3</a></li>
-                <img src="img/placeholder-campaign.jpg" alt="Campaign Picture" width="125"/>
+                <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125"/>
                 <li><a href="campaign.html">Campaign 4</a></li>
-                <img src="img/placeholder-campaign.jpg" alt="Campaign Picture" width="125"/>
+                <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125"/>
                 </ul>
             </div>
             <button className="delete-account-btn" onClick={() => deleteAccount()}>Delete Account</button>

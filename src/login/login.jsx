@@ -1,11 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './login.css';
 
 export function Login() {
     const navigate = useNavigate();
     return (
-        <main>
+        <main className='login'>
             <h1>Login</h1>
             <p>Login or register to donate and save your campaigns!</p>
             <div id="login" className="input-box">
