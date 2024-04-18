@@ -11,8 +11,8 @@ export function Account() {
     }, []);
 
     function showUserInfo() {
-        const uinfoText = localStorage.getItem('uinfo');
-        uinfo = JSON.parse(uinfoText);
+        const uinfo = JSON.parse(localStorage.getItem('uinfo'));
+
     
         const usernameElement = document.getElementById("username");
         const memberSinceElement = document.getElementById("member-since");
@@ -30,13 +30,13 @@ export function Account() {
         const seedsDonatedtxt = document.createElement("p");
         const seedsReceivedtxt = document.createElement("p");
     
-        usernameElement.textContent = username;
-        memberSinceElement.textContent = "Member Since: " + membersince;
-        nameElement.textContent = "Name: " + fullname;
-        emailElement.textContent = "Email: " + email;
-        locationElement.textContent = "Location: " + location;
-        seedsDonatedElement.textContent = "Seeds Donated: " + seedsdonated;
-        seedsReceivedElement.textContent = "Seeds Received: " + seedsreceived;
+        usernameElement.textContent = uinfo.username;
+        memberSinceElement.textContent = "Member Since: " + uinfo.membersince;
+        nameElement.textContent = "Name: " + uinfo.fullname;
+        emailElement.textContent = "Email: " + uinfo.email;
+        locationElement.textContent = "Location: " + uinfo.location;
+        seedsDonatedElement.textContent = "Seeds Donated: " + uinfo.seedsdonated;
+        seedsReceivedElement.textContent = "Seeds Received: " + uinfo.seedsreceived;
     
         usernameElement.appendChild(usernametxt);
         memberSinceElement.appendChild(memberSincetxt);

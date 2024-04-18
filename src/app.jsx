@@ -55,7 +55,7 @@ function Main() {
                 localStorage.removeItem("welcomeMessageDisplayed");
                 fetch(`/api/auth/logout`, {
                     method: 'delete',
-                }).then(() => (navigate('/')));
+                }).then(() => (window.location.href = '/'));
             };
             const userAccount = document.createElement("a");
             userAccount.textContent = username;
