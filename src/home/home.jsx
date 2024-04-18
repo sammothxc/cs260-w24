@@ -25,22 +25,22 @@ export function Home() {
                         <div className='c-box'>
                             <a>Neighborhood Veggie Garden</a>
                             <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
-                            <button className="poppins-semibold" onClick={() => navigate('/campaign')}>View</button>
+                            <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
                         </div>
                         <div className='c-box'>
                             <a>Carrot garden for Provo Elderly Care Center</a>
                             <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
-                            <button className="poppins-semibold" onClick={() => navigate('/campaign')}>View</button>
+                            <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
                         </div>
                         <div className='c-box'>
                             <a>Sarah's Planting Club</a>
                             <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
-                            <button className="poppins-semibold" onClick={() => navigate('/campaign')}>View</button>
+                            <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
                         </div>
                         <div className='c-box'>
                             <a>Foster Elementary 4th Grade Garden</a>
                             <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
-                            <button className="poppins-semibold" onClick={() => navigate('/campaign')}>View</button>
+                            <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
                         </div>
                         <li><a href="campaign">Neighborhood Veggie Garden</a></li>
                         <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
