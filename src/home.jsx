@@ -15,7 +15,6 @@ export function Home() {
     return (
         <main>
             <h1>Your SeedFeed</h1>
-            <hr />
             <div id="user-based">
                 <h3>Your Community in Provo</h3>
                 <hr className="seedfeed"/>
