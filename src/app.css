@@ -181,14 +181,14 @@ main button:hover {
 }
 
 .c-box img {
-    width: 70%;
+    width: 100%;
     border-radius: 8px;
 }
 
 .c-box button {
     background-color: #005512;
     color: #fff;
-    padding: 0.5rem 2;
+    padding: 0.5rem 4rem;
     border: none;
     border-radius: 8px;
 }

@@ -27,12 +27,12 @@ export function Home() {
                             <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
                         </div>
                         <div className='c-box'>
-                            <div>Carrot garden for Provo Elderly Care Center</div>
+                            <div>Carrot garden for Elderly Care Center</div>
                             <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
                             <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
                         </div>
                         <div className='c-box'>
-                            <div>Sarah's Planting Club</div>
+                            <div>Sarah's Planting Club <br /><br /></div>
                             <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
                             <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
                         </div>
