@@ -19,26 +19,28 @@ export function Home() {
             <div id="user-based">
                 <h3>Your Community in Provo</h3>
                 <hr className="seedfeed"/>
-                <div id="local" className="grid">
-                    <div className='c-box'>
-                        <div>Neighborhood Veggie Garden</div>
-                        <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
-                        <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
-                    </div>
-                    <div className='c-box'>
-                        <div>Carrot garden for Provo Elderly Care Center</div>
-                        <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
-                        <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
-                    </div>
-                    <div className='c-box'>
-                        <div>Sarah's Planting Club</div>
-                        <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
-                        <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
-                    </div>
-                    <div className='c-box'>
-                        <div>Foster Elementary 4th Grade Garden</div>
-                        <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
-                        <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
+                <div class="grid-wrapper">
+                    <div id="local" className="grid">
+                        <div className='c-box'>
+                            <div>Neighborhood Veggie Garden</div>
+                            <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
+                            <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
+                        </div>
+                        <div className='c-box'>
+                            <div>Carrot garden for Provo Elderly Care Center</div>
+                            <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
+                            <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
+                        </div>
+                        <div className='c-box'>
+                            <div>Sarah's Planting Club</div>
+                            <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
+                            <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
+                        </div>
+                        <div className='c-box'>
+                            <div>Foster Elementary 4th Grade Garden</div>
+                            <img src="/placeholder-campaign.jpg" alt="Campaign Picture" width="125" />
+                            <button className="poppins-semibold c-button" onClick={() => navigate('/campaign')}>View</button>
+                        </div>
                     </div>
                 </div>
                 <h3>Saved</h3>
